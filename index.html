@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="dark only">
-  <title>Gurkirat Singh Lohat — AI Engineer &amp; Full Stack Developer</title>
-  <meta name="description" content="Portfolio of Gurkirat Singh Lohat — AI Engineer & Full Stack Web Developer. Next.js, Python, C++, AI/ML. GNDEC '28, AlertEnterprise Intern.">
-  <meta name="theme-color" content="#060b18">
+  <title>Gurkirat Singh Lohat — Full Stack Web Developer</title>
+  <meta name="description" content="Portfolio of Gurkirat Singh Lohat — Full Stack Web Developer. Next.js, Python, C++, Web Development. CSE '28 @ GNDEC.">
+  <meta name="theme-color" content="#1a0731">
 
   <!-- Google Fonts: Anta + Noto Sans Gurmukhi + Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,40 +18,53 @@
 
   <style>
     /* ========================================================
-       PALETTE: BRIGHT COBALT TO DEEP NAVY (NO YELLOW)
-       Inspired by twilight shifting into night
+       CARTOON NEO-BRUTALIST VIOLET & PURPLE THEME
+       Palette: Tropical Violet, Bright Violet, Purple, Purple Rain, Electric Aubergine
+       Font Colors: Strictly Black (#000000) and White (#ffffff)
+       Thick 3px-3.5px borders, solid offset cartoon drop shadows
        ======================================================== */
     :root {
-      --bg-navy-dark: #050914;
-      --bg-navy: #060b18;
-      --bg-surface: #0a1224;
-      --bg-surface-elevated: #0f1a32;
-      --bg-glass: rgba(10, 18, 36, 0.94);
+      /* Background Canvas: Electric Aubergine / Deep Purple Night */
+      --bg-canvas: #1a0731;
+      --bg-canvas-dark: #120324;
 
-      /* Bright Cobalt to Deep Navy range */
-      --cobalt-bright: #3b82f6;
-      --cobalt: #2563eb;
-      --cobalt-deep: #1d4ed8;
-      --cobalt-dark: #1e3a8a;
-      --cobalt-subtle: #0e2044;
-      --cobalt-border: rgba(37, 99, 235, 0.22);
+      /* Violet / Purple Cartoon Color Spectrum */
+      --tropical-violet: #c084fc;      /* Vibrant light lilac / tropical violet */
+      --tropical-violet-light: #e9d5ff;/* Pale tropical violet for high contrast with black text */
+      --bright-violet: #9333ea;        /* Vivid bright violet */
+      --bright-violet-vivid: #a855f7;  /* Punchy bright violet */
+      --purple: #7e22ce;               /* Royal purple */
+      --purple-rain: #581c87;          /* Deep purple rain */
+      --purple-rain-deep: #4c1d95;     /* Majestic purple rain */
+      --purple-spot: #3b0764;          /* Purple spot / deep aubergine */
+      --electric-aubergine: #2e0854;   /* Electric aubergine */
 
+      /* Pure Black & White Tokens */
+      --black: #000000;
+      --black-subtle: #111111;
       --white: #ffffff;
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --text-dim: #64748b;
+      --white-subtle: #f8fafc;
 
-      --border-subtle: rgba(255, 255, 255, 0.08);
+      /* Cartoon Thick Outlines & Solid Offset Drop Shadows */
+      --border-thick: 3px solid #000000;
+      --border-chunky: 3.5px solid #000000;
+      --border-badge: 2.5px solid #000000;
+
+      --shadow-sm: 3px 3px 0px #000000;
+      --shadow-md: 5px 5px 0px #000000;
+      --shadow-lg: 7px 7px 0px #000000;
+      --shadow-xl: 9px 9px 0px #000000;
 
       --font-anta: 'Anta', sans-serif;
       --font-gurmukhi: 'Noto Sans Gurmukhi', sans-serif;
       --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 
       --radius-sm: 12px;
-      --radius-md: 20px;
-      --radius-lg: 28px;
+      --radius-md: 18px;
+      --radius-lg: 24px;
       --radius-pill: 9999px;
 
+      --ease-cartoon: cubic-bezier(0.18, 0.89, 0.32, 1.28);
       --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
     }
 
@@ -63,23 +76,21 @@
 
     html {
       scroll-behavior: smooth;
-      background-color: var(--bg-navy);
-      color: var(--text-main);
+      background-color: var(--bg-canvas);
+      color: var(--white);
       font-family: var(--font-anta), var(--font-sans);
       text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
 
+    /* Solid color cartoon background (no background image) */
     body {
-      background-color: var(--bg-navy);
-      background-image: 
-        linear-gradient(180deg, rgba(5, 9, 20, 0.94) 0%, rgba(6, 11, 24, 0.98) 100%),
-        url('images/harmandirsahib.jpg');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      color: var(--text-main);
+      background-color: var(--bg-canvas);
+      /* Playful cartoon subtle dot grid pattern in violet */
+      background-image: radial-gradient(rgba(192, 132, 252, 0.18) 1.5px, transparent 1.5px);
+      background-size: 24px 24px;
+      color: var(--white);
       overflow-x: hidden;
       position: relative;
       min-height: 100vh;
@@ -87,8 +98,8 @@
     }
 
     ::selection {
-      background: var(--cobalt);
-      color: var(--white);
+      background: var(--tropical-violet);
+      color: var(--black);
     }
 
     a {
@@ -108,7 +119,7 @@
       display: block;
     }
 
-    /* FULL WIDTH CONTAINER — Uses available screen real estate without excessive margins */
+    /* FULL WIDTH CONTAINER */
     .wrap {
       width: 100%;
       max-width: 1400px;
@@ -119,15 +130,16 @@
     }
 
     /* ========================================================
-       CUSTOM CURSOR (Bright Cobalt to Navy)
+       CUSTOM CURSOR (Tropical Violet & Black)
        ======================================================== */
     .custom-cursor-dot {
       position: fixed;
       top: 0;
       left: 0;
-      width: 8px;
-      height: 8px;
-      background: var(--cobalt-bright);
+      width: 9px;
+      height: 9px;
+      background: var(--tropical-violet);
+      border: 1.5px solid var(--black);
       border-radius: 50%;
       pointer-events: none;
       z-index: 99999;
@@ -139,22 +151,22 @@
       position: fixed;
       top: 0;
       left: 0;
-      width: 32px;
-      height: 32px;
-      border: 1.5px solid rgba(59, 130, 246, 0.45);
-      background: rgba(37, 99, 235, 0.05);
+      width: 34px;
+      height: 34px;
+      border: 2px solid var(--tropical-violet);
+      background: rgba(192, 132, 252, 0.15);
       border-radius: 50%;
       pointer-events: none;
       z-index: 99998;
       transform: translate(-50%, -50%);
-      transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+      transition: width 0.2s ease, height 0.2s ease, background 0.2s ease;
     }
 
     .custom-cursor-ring.cursor-hover {
       width: 50px;
       height: 50px;
-      border-color: var(--cobalt-bright);
-      background: rgba(37, 99, 235, 0.12);
+      border-color: var(--white);
+      background: rgba(192, 132, 252, 0.3);
     }
 
     @media (hover: none) and (pointer: coarse) {
@@ -164,12 +176,11 @@
     /* ========================================================
        PRELOADER / WELCOME SCREEN
        Ik Onkar (ੴ) + "ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ" with "WELCOME" directly below
-       Cobalt & Navy styling only
        ======================================================== */
     #preloader {
       position: fixed;
       inset: 0;
-      background: #040813;
+      background: var(--electric-aubergine);
       z-index: 10000;
       display: flex;
       flex-direction: column;
@@ -203,8 +214,9 @@
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      background: var(--bg-surface);
-      border: 2px solid var(--cobalt-bright);
+      background: var(--tropical-violet);
+      border: var(--border-chunky);
+      box-shadow: var(--shadow-md);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -214,9 +226,9 @@
 
     .ik-onkar-ring {
       position: absolute;
-      inset: -6px;
+      inset: -8px;
       border-radius: 50%;
-      border: 1px dashed rgba(59, 130, 246, 0.4);
+      border: 2px dashed #000000;
       animation: spinRing 22s linear infinite;
     }
 
@@ -228,7 +240,7 @@
       font-size: 3.8rem;
       font-family: var(--font-gurmukhi);
       font-weight: 800;
-      color: var(--white);
+      color: var(--black);
       line-height: 1;
       user-select: none;
       transform: translateY(-2px);
@@ -238,12 +250,12 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.35rem;
     }
 
     .preloader-text-punjabi {
       font-family: var(--font-gurmukhi);
-      font-size: clamp(1.9rem, 4.2vw, 2.7rem);
+      font-size: clamp(2rem, 4.4vw, 2.8rem);
       font-weight: 800;
       color: var(--white);
       letter-spacing: 0.02em;
@@ -254,7 +266,7 @@
       font-size: clamp(1.4rem, 3.2vw, 2rem);
       font-weight: 700;
       letter-spacing: 0.28em;
-      color: var(--cobalt-bright);
+      color: var(--tropical-violet);
       text-transform: uppercase;
     }
 
@@ -262,24 +274,28 @@
       position: absolute;
       bottom: 2rem;
       font-family: var(--font-anta);
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       letter-spacing: 0.08em;
-      color: var(--text-dim);
-      padding: 0.45rem 1.2rem;
-      border: 1px solid var(--border-subtle);
+      color: var(--black);
+      font-weight: 700;
+      padding: 0.5rem 1.3rem;
+      border: var(--border-thick);
       border-radius: var(--radius-pill);
-      transition: all 0.25s ease;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
       cursor: pointer;
-      background: var(--bg-surface);
+      background: var(--tropical-violet);
     }
 
     .preloader-skip:hover {
-      color: var(--white);
-      border-color: var(--cobalt-bright);
+      background: var(--white);
+      transform: translate(-2px, -2px);
+      box-shadow: var(--shadow-md);
     }
 
     /* ========================================================
-       FLOATING TOP STATUS PILL
+       TOP NAVBAR PILL — Cartoon Chunky Style
+       Profile photo in circle, no 'Open for work'
        ======================================================== */
     .top-pill-bar {
       position: fixed;
@@ -289,20 +305,15 @@
       z-index: 100;
       display: flex;
       align-items: center;
-      gap: 1.25rem;
-      padding: 0.5rem 0.85rem 0.5rem 1.25rem;
-      background: var(--bg-glass);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid var(--cobalt-border);
+      gap: 1.5rem;
+      padding: 0.5rem 0.9rem 0.5rem 1.1rem;
+      background: var(--electric-aubergine);
+      border: var(--border-thick);
+      box-shadow: var(--shadow-md);
       border-radius: var(--radius-pill);
       width: max-content;
       max-width: 94vw;
-      transition: border-color 0.25s ease;
-    }
-
-    .top-pill-bar:hover {
-      border-color: var(--cobalt-bright);
+      transition: transform 0.2s ease;
     }
 
     .brand-mark-group {
@@ -311,114 +322,83 @@
       gap: 0.75rem;
     }
 
-    .brand-monogram {
-      width: 30px;
-      height: 30px;
+    .brand-avatar-mini {
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
-      background: var(--cobalt);
-      color: var(--white);
-      font-family: var(--font-anta);
-      font-weight: 800;
-      font-size: 0.8rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      border: 2px solid #000000;
+      overflow: hidden;
       flex-shrink: 0;
+      background: var(--tropical-violet);
+    }
+
+    .brand-avatar-mini img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .brand-title {
       font-family: var(--font-anta);
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       letter-spacing: 0.04em;
       color: var(--white);
       white-space: nowrap;
-    }
-
-    .status-badge-live {
-      display: flex;
-      align-items: center;
-      gap: 0.45rem;
-      font-family: var(--font-anta);
-      font-size: 0.75rem;
-      color: var(--cobalt-bright);
-      background: var(--cobalt-subtle);
-      padding: 0.25rem 0.75rem;
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--cobalt-border);
-      letter-spacing: 0.05em;
-      white-space: nowrap;
-    }
-
-    .status-dot-pulse {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--cobalt-bright);
-      animation: dotPulse 1.8s infinite;
-    }
-
-    @keyframes dotPulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.35; transform: scale(0.8); }
     }
 
     .top-pill-actions {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.6rem;
     }
 
-    /* Clean Buttons: Cobalt & Transparent */
+    /* Cartoon Buttons with Thick Borders & Offset Shadow */
     .pill-btn-mini {
       font-family: var(--font-anta);
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       letter-spacing: 0.04em;
-      padding: 0.45rem 1rem;
+      padding: 0.45rem 1.1rem;
       border-radius: var(--radius-pill);
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      transition: all 0.25s var(--ease-smooth);
       white-space: nowrap;
       cursor: pointer;
-    }
-
-    .pill-btn-cobalt {
-      background: var(--cobalt);
-      color: var(--white);
+      border: var(--border-badge);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.15s var(--ease-cartoon);
       font-weight: 700;
-      border: none;
     }
 
-    .pill-btn-cobalt:hover {
-      background: var(--cobalt-bright);
-      transform: translateY(-2px);
+    .pill-btn-violet {
+      background: var(--tropical-violet);
+      color: var(--black);
+    }
+
+    .pill-btn-violet:hover {
+      background: var(--white);
+      transform: translate(-2px, -2px);
+      box-shadow: var(--shadow-md);
     }
 
     .pill-btn-outline {
-      background: transparent;
-      border: 1.5px solid rgba(255, 255, 255, 0.2);
+      background: var(--purple-rain);
       color: var(--white);
     }
 
     .pill-btn-outline:hover {
-      border-color: var(--white);
-      background: rgba(255, 255, 255, 0.08);
-      transform: translateY(-2px);
-    }
-
-    @media (max-width: 680px) {
-      .status-badge-live { display: none; }
-      .top-pill-bar { padding: 0.4rem 0.6rem 0.4rem 0.85rem; }
+      background: var(--bright-violet);
+      transform: translate(-2px, -2px);
+      box-shadow: var(--shadow-md);
     }
 
     /* ========================================================
-       HERO SECTION — Photo directly on the right side upon open
-       Balanced text scale (not overwhelmingly big)
+       HERO SECTION — Cartoon Style, Simple Clear Copy
+       Photo on the right upon open
        ======================================================== */
     .hero-section {
       padding-top: clamp(6.5rem, 12vw, 9rem);
-      padding-bottom: clamp(3.5rem, 7vw, 5.5rem);
+      padding-bottom: clamp(3rem, 6vw, 5rem);
       position: relative;
     }
 
@@ -441,35 +421,37 @@
       align-items: center;
       gap: 0.5rem;
       font-family: var(--font-anta);
-      font-size: 0.78rem;
-      letter-spacing: 0.1em;
-      color: var(--cobalt-bright);
-      background: var(--cobalt-subtle);
-      border: 1px solid var(--cobalt-border);
-      padding: 0.4rem 1.1rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      color: var(--black);
+      background: var(--tropical-violet);
+      border: var(--border-badge);
+      box-shadow: var(--shadow-sm);
+      padding: 0.4rem 1.2rem;
       border-radius: var(--radius-pill);
       margin-bottom: 1.5rem;
+      font-weight: 700;
     }
 
     h1.hero-title {
       font-family: var(--font-anta);
       font-size: clamp(1.85rem, 3.8vw, 2.85rem);
-      line-height: 1.18;
+      line-height: 1.22;
       letter-spacing: -0.01em;
       color: var(--white);
       text-transform: uppercase;
       margin-bottom: 1.25rem;
     }
 
-    h1.hero-title .text-cobalt {
-      color: var(--cobalt-bright);
+    h1.hero-title .text-violet {
+      color: var(--tropical-violet);
     }
 
     p.hero-tagline {
-      font-size: 1rem;
+      font-size: 1.05rem;
       line-height: 1.65;
-      color: var(--text-muted);
-      max-width: 54ch;
+      color: var(--white);
+      max-width: 56ch;
       margin-bottom: 2rem;
     }
 
@@ -484,7 +466,7 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      gap: 0.85rem;
+      gap: 0.9rem;
     }
 
     @media (max-width: 920px) {
@@ -493,65 +475,69 @@
       }
     }
 
-    /* Clean Buttons */
+    /* Chunky Cartoon Action Buttons */
     .btn-simple {
       font-family: var(--font-anta);
-      font-size: 0.9rem;
-      letter-spacing: 0.05em;
-      padding: 0.75rem 1.6rem;
+      font-size: 0.92rem;
+      letter-spacing: 0.04em;
+      padding: 0.85rem 1.8rem;
       border-radius: var(--radius-pill);
       display: inline-flex;
       align-items: center;
       gap: 0.55rem;
       font-weight: 700;
-      transition: all 0.25s var(--ease-smooth);
+      border: var(--border-thick);
+      box-shadow: var(--shadow-md);
+      transition: all 0.15s var(--ease-cartoon);
       cursor: pointer;
     }
 
-    .btn-simple-cobalt {
-      background: var(--cobalt);
+    .btn-simple-violet {
+      background: var(--tropical-violet);
+      color: var(--black);
+    }
+
+    .btn-simple-violet:hover {
+      background: var(--white);
+      transform: translate(-3px, -3px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-simple-dark {
+      background: var(--purple-rain);
       color: var(--white);
-      border: none;
     }
 
-    .btn-simple-cobalt:hover {
-      background: var(--cobalt-bright);
-      transform: translateY(-2px);
+    .btn-simple-dark:hover {
+      background: var(--bright-violet);
+      transform: translate(-3px, -3px);
+      box-shadow: var(--shadow-lg);
     }
 
-    .btn-simple-transparent {
-      background: transparent;
-      color: var(--white);
-      border: 1.5px solid rgba(255, 255, 255, 0.25);
-    }
-
-    .btn-simple-transparent:hover {
-      border-color: var(--white);
-      background: rgba(255, 255, 255, 0.08);
-      transform: translateY(-2px);
-    }
-
-    /* Hero Photo on the Right Side (Upon Page Open) */
+    /* Hero Photo Card (Cartoon Frame) */
     .hero-photo-card {
-      background: var(--bg-surface);
-      border: 1.5px solid var(--cobalt-border);
+      background: var(--tropical-violet);
+      border: var(--border-chunky);
+      box-shadow: var(--shadow-lg);
       border-radius: var(--radius-lg);
-      padding: 1rem;
+      padding: 1.15rem;
       max-width: 440px;
       margin: 0 auto;
-      transition: border-color 0.25s ease;
+      transition: transform 0.2s var(--ease-cartoon), box-shadow 0.2s ease;
     }
 
     .hero-photo-card:hover {
-      border-color: var(--cobalt-bright);
+      transform: translate(-3px, -3px);
+      box-shadow: var(--shadow-xl);
     }
 
     .hero-photo-box {
       width: 100%;
       aspect-ratio: 1 / 1;
       border-radius: calc(var(--radius-lg) - 8px);
+      border: var(--border-thick);
       overflow: hidden;
-      background: var(--bg-navy-dark);
+      background: var(--electric-aubergine);
       position: relative;
     }
 
@@ -562,31 +548,34 @@
     }
 
     .hero-photo-footer {
-      margin-top: 0.85rem;
+      margin-top: 0.9rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.4rem 0.6rem;
+      padding: 0.35rem 0.5rem;
     }
 
     .hero-photo-name {
       font-family: var(--font-anta);
-      font-size: 0.92rem;
-      color: var(--white);
+      font-size: 0.95rem;
+      color: var(--black);
+      font-weight: 800;
     }
 
     .hero-photo-role {
       font-family: var(--font-anta);
-      font-size: 0.75rem;
-      color: var(--cobalt-bright);
-      background: var(--cobalt-subtle);
-      border: 1px solid var(--cobalt-border);
-      padding: 0.2rem 0.6rem;
+      font-size: 0.78rem;
+      color: var(--white);
+      background: var(--purple-rain);
+      border: var(--border-badge);
+      box-shadow: var(--shadow-sm);
+      padding: 0.25rem 0.75rem;
       border-radius: var(--radius-pill);
+      font-weight: 700;
     }
 
     /* ========================================================
-       SECTION HEADINGS — Clean & Consistent
+       SECTION HEADINGS
        ======================================================== */
     .section-wrap {
       padding: clamp(3rem, 6vw, 4.5rem) 0;
@@ -598,22 +587,24 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 0.5rem;
+      gap: 0.4rem;
     }
 
     .section-tag-pill {
       font-family: var(--font-anta);
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--cobalt-bright);
-      background: var(--cobalt-subtle);
-      border: 1px solid var(--cobalt-border);
-      padding: 0.25rem 0.85rem;
+      color: var(--black);
+      background: var(--tropical-violet);
+      border: var(--border-badge);
+      box-shadow: var(--shadow-sm);
+      padding: 0.3rem 0.9rem;
       border-radius: var(--radius-pill);
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
+      font-weight: 800;
     }
 
     h2.section-heading-lg {
@@ -626,73 +617,119 @@
     }
 
     p.section-subtext {
-      font-size: 0.95rem;
-      color: var(--text-muted);
+      font-size: 1rem;
+      color: var(--white);
       max-width: 58ch;
       line-height: 1.6;
+      opacity: 0.9;
     }
 
     /* ========================================================
-       SQUARE CARDS & CONSISTENT BLOCKS
-       No highlighted border transitions, balanced aspect ratio
+       CARTOON CARDS — VARIED PURPLE/VIOLET COLORS & THICK BORDERS
+       Cards use Tropical Violet, Bright Violet, Purple Rain, Electric Aubergine
+       Font colors: Strictly Black (#000000) or White (#ffffff)
        ======================================================== */
     .square-card-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
       gap: 1.5rem;
     }
 
-    .square-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--cobalt-border);
+    .cartoon-card {
+      border: var(--border-chunky);
       border-radius: var(--radius-lg);
-      padding: 1.75rem;
+      padding: 1.85rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: transform 0.3s var(--ease-smooth), border-color 0.3s ease;
+      box-shadow: var(--shadow-md);
+      transition: transform 0.2s var(--ease-cartoon), box-shadow 0.2s ease;
       position: relative;
     }
 
-    .square-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--cobalt-bright);
+    .cartoon-card:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: var(--shadow-lg);
     }
 
+    /* Distinct Purple / Violet Card Color Themes */
+    /* Light Card: Tropical Violet -> Black Font */
+    .theme-tropical {
+      background: var(--tropical-violet);
+      color: var(--black);
+    }
+    .theme-tropical .card-label-mini { color: var(--black); opacity: 0.85; }
+    .theme-tropical .card-title-main { color: var(--black); }
+    .theme-tropical .card-text-body { color: var(--black); }
+    .theme-tropical .metric-val { color: var(--black); }
+    .theme-tropical .metric-caption { color: var(--black); opacity: 0.85; }
+
+    /* Dark Card: Bright Violet -> White Font */
+    .theme-bright-violet {
+      background: var(--bright-violet);
+      color: var(--white);
+    }
+    .theme-bright-violet .card-label-mini { color: var(--white); opacity: 0.9; }
+    .theme-bright-violet .card-title-main { color: var(--white); }
+    .theme-bright-violet .card-text-body { color: var(--white); opacity: 0.92; }
+    .theme-bright-violet .metric-val { color: var(--white); }
+    .theme-bright-violet .metric-caption { color: var(--white); opacity: 0.85; }
+
+    /* Dark Card: Purple Rain -> White Font */
+    .theme-purple-rain {
+      background: var(--purple-rain);
+      color: var(--white);
+    }
+    .theme-purple-rain .card-label-mini { color: var(--tropical-violet); }
+    .theme-purple-rain .card-title-main { color: var(--white); }
+    .theme-purple-rain .card-text-body { color: var(--white); opacity: 0.92; }
+    .theme-purple-rain .metric-val { color: var(--white); }
+    .theme-purple-rain .metric-caption { color: var(--white); opacity: 0.85; }
+
+    /* Dark Card: Electric Aubergine -> White Font */
+    .theme-electric-aubergine {
+      background: var(--electric-aubergine);
+      color: var(--white);
+    }
+    .theme-electric-aubergine .card-label-mini { color: var(--tropical-violet); }
+    .theme-electric-aubergine .card-title-main { color: var(--white); }
+    .theme-electric-aubergine .card-text-body { color: var(--white); opacity: 0.92; }
+    .theme-electric-aubergine .metric-val { color: var(--white); }
+    .theme-electric-aubergine .metric-caption { color: var(--white); opacity: 0.85; }
+
     .card-icon-box {
-      width: 44px;
-      height: 44px;
+      width: 48px;
+      height: 48px;
       border-radius: var(--radius-sm);
-      background: var(--cobalt-subtle);
-      border: 1px solid var(--cobalt-border);
-      color: var(--cobalt-bright);
+      background: var(--white);
+      border: var(--border-thick);
+      box-shadow: var(--shadow-sm);
+      color: var(--black);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       margin-bottom: 1.25rem;
     }
 
     .card-label-mini {
       font-family: var(--font-anta);
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      color: var(--cobalt-bright);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
+      font-weight: 800;
       margin-bottom: 0.35rem;
     }
 
     .card-title-main {
       font-family: var(--font-anta);
-      font-size: 1.25rem;
-      color: var(--white);
+      font-size: 1.35rem;
       margin-bottom: 0.65rem;
       line-height: 1.3;
     }
 
     .card-text-body {
-      font-size: 0.92rem;
-      color: var(--text-muted);
+      font-size: 0.95rem;
       line-height: 1.6;
     }
 
@@ -706,33 +743,30 @@
 
     .skill-pill {
       font-family: var(--font-anta);
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       letter-spacing: 0.04em;
-      color: var(--text-main);
-      background: var(--bg-surface-elevated);
-      border: 1px solid var(--border-subtle);
+      color: var(--black);
+      background: var(--white);
+      border: var(--border-badge);
+      box-shadow: 2px 2px 0px #000000;
       padding: 0.35rem 0.85rem;
       border-radius: var(--radius-pill);
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      transition: all 0.2s ease;
+      gap: 0.45rem;
+      font-weight: 700;
+      transition: all 0.15s ease;
     }
 
     .skill-pill i {
-      color: var(--cobalt-bright);
+      color: var(--black);
       font-size: 0.85rem;
     }
 
     .skill-pill:hover {
-      background: var(--cobalt);
-      color: var(--white);
-      border-color: var(--cobalt-bright);
-      transform: translateY(-2px);
-    }
-
-    .skill-pill:hover i {
-      color: var(--white);
+      background: var(--tropical-violet);
+      transform: translate(-2px, -2px);
+      box-shadow: var(--shadow-sm);
     }
 
     /* Metric Counters */
@@ -750,49 +784,49 @@
 
     .metric-val {
       font-family: var(--font-anta);
-      font-size: 1.8rem;
-      color: var(--white);
+      font-size: 1.95rem;
       line-height: 1;
       margin-bottom: 0.25rem;
     }
 
     .metric-caption {
-      font-size: 0.75rem;
-      color: var(--text-dim);
+      font-size: 0.78rem;
       letter-spacing: 0.05em;
+      font-weight: 700;
     }
 
     /* ========================================================
-       PROJECTS GRID — Consistent Square Cards
+       PROJECTS GRID — Cartoon Thick Border Cards
        ======================================================== */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
       gap: 1.5rem;
     }
 
     .project-card-interactive {
-      background: var(--bg-surface);
-      border: 1px solid var(--cobalt-border);
+      border: var(--border-chunky);
       border-radius: var(--radius-lg);
       overflow: hidden;
       display: flex;
       flex-direction: column;
       cursor: pointer;
       position: relative;
-      transition: transform 0.3s var(--ease-smooth), border-color 0.3s ease;
+      box-shadow: var(--shadow-md);
+      transition: transform 0.2s var(--ease-cartoon), box-shadow 0.2s ease;
     }
 
     .project-card-interactive:hover {
-      transform: translateY(-4px);
-      border-color: var(--cobalt-bright);
+      transform: translate(-3px, -3px);
+      box-shadow: var(--shadow-lg);
     }
 
     .project-thumb-container {
       width: 100%;
-      height: 200px;
+      height: 190px;
       position: relative;
-      background: var(--bg-navy-dark);
+      background: #000000;
+      border-bottom: var(--border-thick);
       overflow: hidden;
       display: flex;
       align-items: center;
@@ -809,36 +843,40 @@
 
     .project-category-badge {
       position: absolute;
-      top: 0.9rem;
-      left: 0.9rem;
+      top: 0.85rem;
+      left: 0.85rem;
       font-family: var(--font-anta);
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       letter-spacing: 0.08em;
-      color: var(--white);
-      background: var(--cobalt);
+      color: var(--black);
+      background: var(--tropical-violet);
+      border: var(--border-badge);
+      box-shadow: 2px 2px 0px #000000;
       padding: 0.25rem 0.75rem;
       border-radius: var(--radius-pill);
-      font-weight: 700;
+      font-weight: 800;
       z-index: 2;
     }
 
     .project-quick-view-hint {
       position: absolute;
-      bottom: 0.9rem;
-      right: 0.9rem;
-      background: var(--bg-navy);
-      border: 1px solid var(--cobalt-border);
-      color: var(--cobalt-bright);
+      bottom: 0.85rem;
+      right: 0.85rem;
+      background: var(--white);
+      border: var(--border-badge);
+      box-shadow: 2px 2px 0px #000000;
+      color: var(--black);
       padding: 0.3rem 0.75rem;
       border-radius: var(--radius-pill);
       font-family: var(--font-anta);
-      font-size: 0.72rem;
+      font-size: 0.75rem;
+      font-weight: 800;
       display: flex;
       align-items: center;
       gap: 0.35rem;
       opacity: 0;
       transform: translateY(6px);
-      transition: all 0.25s ease;
+      transition: all 0.2s ease;
       z-index: 2;
     }
 
@@ -858,13 +896,11 @@
 
     .project-card-title {
       font-family: var(--font-anta);
-      font-size: 1.25rem;
-      color: var(--white);
+      font-size: 1.3rem;
     }
 
     .project-summary-short {
-      font-size: 0.9rem;
-      color: var(--text-muted);
+      font-size: 0.92rem;
       line-height: 1.55;
     }
 
@@ -875,13 +911,24 @@
     }
 
     .project-tag-item {
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       font-family: var(--font-anta);
-      color: var(--text-dim);
-      background: var(--bg-surface-elevated);
-      border: 1px solid var(--border-subtle);
-      padding: 0.2rem 0.6rem;
+      padding: 0.2rem 0.65rem;
       border-radius: var(--radius-pill);
+      border: 1.5px solid #000000;
+      font-weight: 700;
+    }
+
+    /* Tag styles inside light/dark cards */
+    .theme-tropical .project-tag-item {
+      background: var(--white);
+      color: var(--black);
+    }
+    .theme-bright-violet .project-tag-item,
+    .theme-purple-rain .project-tag-item,
+    .theme-electric-aubergine .project-tag-item {
+      background: rgba(0, 0, 0, 0.4);
+      color: var(--white);
     }
 
     /* ========================================================
@@ -894,18 +941,20 @@
     }
 
     .stats-curved-box {
-      background: var(--bg-surface);
-      border: 1px solid var(--cobalt-border);
+      border: var(--border-chunky);
+      box-shadow: var(--shadow-md);
       border-radius: var(--radius-lg);
       padding: 1.5rem;
       display: flex;
       flex-direction: column;
       gap: 1rem;
-      transition: border-color 0.25s ease;
+      background: var(--electric-aubergine);
+      transition: transform 0.2s var(--ease-cartoon), box-shadow 0.2s ease;
     }
 
     .stats-curved-box:hover {
-      border-color: var(--cobalt-bright);
+      transform: translate(-3px, -3px);
+      box-shadow: var(--shadow-lg);
     }
 
     .stats-box-header {
@@ -916,28 +965,32 @@
 
     .stats-box-title {
       font-family: var(--font-anta);
-      font-size: 0.92rem;
-      color: var(--cobalt-bright);
+      font-size: 0.95rem;
+      color: var(--tropical-violet);
       letter-spacing: 0.05em;
       text-transform: uppercase;
+      font-weight: 700;
     }
 
     .stats-curved-box img {
       width: 100%;
       height: auto;
       border-radius: var(--radius-sm);
+      border: var(--border-thick);
     }
 
     /* ========================================================
        CONTACT & ACTION HUB
        ======================================================== */
     .contact-banner-card {
-      background: var(--bg-surface);
-      border: 1.5px solid var(--cobalt-border);
+      background: var(--bright-violet);
+      border: var(--border-chunky);
+      box-shadow: var(--shadow-lg);
       border-radius: var(--radius-lg);
       padding: clamp(2.5rem, 5vw, 4rem) clamp(1.25rem, 3vw, 2.5rem);
       text-align: center;
       position: relative;
+      color: var(--white);
     }
 
     .contact-big-title {
@@ -950,15 +1003,19 @@
     }
 
     .contact-big-title span {
-      color: var(--cobalt-bright);
+      color: var(--white);
+      text-decoration: underline;
+      text-decoration-color: var(--black);
+      text-decoration-thickness: 4px;
     }
 
     .contact-subtext {
-      font-size: 0.98rem;
-      color: var(--text-muted);
+      font-size: 1.05rem;
+      color: var(--white);
       max-width: 52ch;
       margin: 0 auto 2rem auto;
       line-height: 1.6;
+      opacity: 0.95;
     }
 
     .contact-action-row {
@@ -966,27 +1023,30 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-      gap: 0.85rem;
+      gap: 0.9rem;
     }
 
     .email-display-badge {
       display: inline-flex;
       align-items: center;
       gap: 0.55rem;
-      background: var(--bg-surface-elevated);
-      border: 1px solid var(--cobalt-border);
-      padding: 0.75rem 1.4rem;
+      background: var(--white);
+      border: var(--border-thick);
+      box-shadow: var(--shadow-md);
+      padding: 0.8rem 1.4rem;
       border-radius: var(--radius-pill);
       font-family: var(--font-anta);
-      font-size: 0.88rem;
-      color: var(--text-main);
+      font-size: 0.92rem;
+      color: var(--black);
+      font-weight: 700;
       cursor: pointer;
-      transition: all 0.25s ease;
+      transition: all 0.15s var(--ease-cartoon);
     }
 
     .email-display-badge:hover {
-      border-color: var(--cobalt-bright);
-      color: var(--cobalt-bright);
+      background: var(--tropical-violet);
+      transform: translate(-3px, -3px);
+      box-shadow: var(--shadow-lg);
     }
 
     /* ========================================================
@@ -1001,40 +1061,34 @@
       display: flex;
       align-items: center;
       gap: 0.55rem;
-      padding: 0.5rem 0.75rem;
-      background: var(--bg-glass);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border: 1px solid var(--cobalt-border);
+      padding: 0.5rem 0.8rem;
+      background: var(--electric-aubergine);
+      border: var(--border-thick);
+      box-shadow: var(--shadow-md);
       border-radius: var(--radius-pill);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
-      transition: border-color 0.25s ease;
-    }
-
-    .floating-island-dock:hover {
-      border-color: var(--cobalt-bright);
     }
 
     .dock-item {
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--text-main);
-      font-size: 1.1rem;
-      background: var(--bg-surface-elevated);
-      border: 1px solid var(--border-subtle);
+      color: var(--white);
+      font-size: 1.15rem;
+      background: var(--purple-rain);
+      border: 2px solid #000000;
+      box-shadow: 2px 2px 0px #000000;
       position: relative;
-      transition: all 0.25s var(--ease-smooth);
+      transition: all 0.15s var(--ease-cartoon);
     }
 
     .dock-item:hover {
-      background: var(--cobalt);
-      color: var(--white);
-      border-color: var(--cobalt-bright);
-      transform: translateY(-3px) scale(1.08);
+      background: var(--tropical-violet);
+      color: var(--black);
+      transform: translate(-2px, -2px);
+      box-shadow: var(--shadow-sm);
     }
 
     .dock-item .tooltip {
@@ -1042,11 +1096,11 @@
       bottom: 125%;
       left: 50%;
       transform: translateX(-50%) translateY(5px);
-      background: var(--bg-navy-dark);
-      border: 1px solid var(--cobalt-border);
+      background: var(--black);
+      border: 1.5px solid var(--tropical-violet);
       color: var(--white);
       font-family: var(--font-anta);
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       letter-spacing: 0.05em;
       padding: 0.25rem 0.65rem;
       border-radius: var(--radius-pill);
@@ -1063,9 +1117,9 @@
 
     .dock-separator {
       width: 1px;
-      height: 22px;
-      background: var(--border-subtle);
-      margin: 0 0.1rem;
+      height: 24px;
+      background: var(--black);
+      margin: 0 0.15rem;
     }
 
     /* ========================================================
@@ -1074,9 +1128,9 @@
     .modal-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(3, 7, 18, 0.88);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: rgba(18, 3, 36, 0.9);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       z-index: 10001;
       display: flex;
       align-items: center;
@@ -1093,19 +1147,20 @@
     }
 
     .modal-box-curved {
-      background: var(--bg-surface);
-      border: 1.5px solid var(--cobalt-border);
+      background: var(--electric-aubergine);
+      border: var(--border-chunky);
+      box-shadow: var(--shadow-xl);
       border-radius: var(--radius-lg);
       width: 100%;
       max-width: 620px;
       max-height: 88vh;
       overflow-y: auto;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85);
       position: relative;
-      transform: scale(0.92) translateY(15px);
-      transition: transform 0.35s var(--ease-smooth);
+      transform: scale(0.94) translateY(15px);
+      transition: transform 0.25s var(--ease-cartoon);
+      color: var(--white);
       scrollbar-width: thin;
-      scrollbar-color: var(--cobalt) var(--bg-surface);
+      scrollbar-color: var(--tropical-violet) var(--electric-aubergine);
     }
 
     .modal-overlay.active .modal-box-curved {
@@ -1117,8 +1172,8 @@
       align-items: center;
       justify-content: space-between;
       padding: 1.1rem 1.4rem;
-      border-bottom: 1px solid var(--border-subtle);
-      background: var(--bg-surface-elevated);
+      border-bottom: var(--border-thick);
+      background: var(--purple-rain);
       position: sticky;
       top: 0;
       z-index: 10;
@@ -1126,42 +1181,44 @@
 
     .modal-header-badge {
       font-family: var(--font-anta);
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       letter-spacing: 0.08em;
-      color: var(--cobalt-bright);
-      background: var(--cobalt-subtle);
-      border: 1px solid var(--cobalt-border);
-      padding: 0.25rem 0.75rem;
+      color: var(--black);
+      background: var(--tropical-violet);
+      border: var(--border-badge);
+      box-shadow: 2px 2px 0px #000000;
+      padding: 0.25rem 0.8rem;
       border-radius: var(--radius-pill);
+      font-weight: 800;
     }
 
     .modal-close-cross {
-      width: 34px;
-      height: 34px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      color: var(--text-main);
+      background: var(--white);
+      border: var(--border-thick);
+      box-shadow: 2px 2px 0px #000000;
+      color: var(--black);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1rem;
+      font-size: 1.1rem;
       cursor: pointer;
-      transition: all 0.2s ease;
+      font-weight: 800;
+      transition: all 0.15s ease;
     }
 
     .modal-close-cross:hover {
-      background: var(--cobalt);
-      color: var(--white);
-      border-color: var(--cobalt-bright);
+      background: var(--tropical-violet);
       transform: rotate(90deg);
     }
 
     .modal-body-content {
-      padding: 1.4rem;
+      padding: 1.5rem;
       display: flex;
       flex-direction: column;
-      gap: 1.1rem;
+      gap: 1.2rem;
     }
 
     .modal-banner-preview {
@@ -1169,11 +1226,11 @@
       height: 180px;
       border-radius: var(--radius-md);
       overflow: hidden;
-      background: var(--bg-navy-dark);
+      background: var(--black);
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid var(--border-subtle);
+      border: var(--border-thick);
     }
 
     .modal-project-title {
@@ -1184,47 +1241,48 @@
     }
 
     .modal-project-summary {
-      font-size: 0.92rem;
-      color: var(--text-muted);
+      font-size: 0.95rem;
+      color: var(--white);
       line-height: 1.6;
+      opacity: 0.92;
     }
 
     .modal-highlights-list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 0.45rem;
+      gap: 0.5rem;
     }
 
     .modal-highlights-list li {
-      font-size: 0.88rem;
-      color: var(--text-main);
+      font-size: 0.9rem;
+      color: var(--white);
       display: flex;
       align-items: center;
-      gap: 0.55rem;
+      gap: 0.6rem;
     }
 
     .modal-highlights-list li i {
-      color: var(--cobalt-bright);
-      font-size: 0.85rem;
+      color: var(--tropical-violet);
+      font-size: 0.9rem;
     }
 
     .modal-actions-footer {
       display: flex;
       gap: 0.75rem;
-      padding-top: 0.5rem;
-      border-top: 1px solid var(--border-subtle);
+      padding-top: 0.6rem;
+      border-top: var(--border-thick);
       flex-wrap: wrap;
     }
 
-    /* Resume Popup Modal Styles (Image Display + PDF Download) */
+    /* Resume Popup Modal Styles (Image Viewer + PDF Download) */
     .resume-preview-box {
       width: 100%;
       min-height: 380px;
       max-height: 520px;
       border-radius: var(--radius-md);
-      border: 1px solid var(--cobalt-border);
-      background: var(--bg-navy-dark);
+      border: var(--border-thick);
+      background: var(--black);
       overflow-y: auto;
       display: flex;
       align-items: center;
@@ -1245,18 +1303,16 @@
       flex-direction: column;
       align-items: center;
       gap: 0.75rem;
-      color: var(--text-muted);
+      color: var(--white);
     }
 
     .resume-fallback-icon {
-      font-size: 2.5rem;
-      color: var(--cobalt-bright);
+      font-size: 2.8rem;
+      color: var(--tropical-violet);
     }
 
     /* ========================================================
        BI-DIRECTIONAL SCROLL REVEAL ANIMATIONS
-       Triggers smoothly scrolling DOWN and scrolling UP!
-       Left items transition from left, right items from right
        ======================================================== */
     .reveal-from-left,
     .reveal-from-right,
@@ -1289,15 +1345,16 @@
       bottom: 5.5rem;
       left: 50%;
       transform: translateX(-50%) translateY(20px);
-      background: var(--bg-navy-dark);
-      border: 1.5px solid var(--cobalt-bright);
-      color: var(--white);
-      padding: 0.55rem 1.3rem;
+      background: var(--tropical-violet);
+      border: var(--border-thick);
+      color: var(--black);
+      font-weight: 800;
+      padding: 0.6rem 1.4rem;
       border-radius: var(--radius-pill);
       font-family: var(--font-anta);
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       letter-spacing: 0.05em;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+      box-shadow: var(--shadow-md);
       opacity: 0;
       pointer-events: none;
       transition: all 0.25s ease;
@@ -1313,25 +1370,26 @@
     footer {
       padding: 3.5rem 0 6.5rem 0;
       text-align: center;
-      border-top: 1px solid var(--border-subtle);
+      border-top: var(--border-thick);
+      background: var(--electric-aubergine);
       position: relative;
     }
 
     .footer-credits {
       font-family: var(--font-anta);
-      font-size: 0.85rem;
-      color: var(--text-dim);
+      font-size: 0.88rem;
+      color: var(--white);
       letter-spacing: 0.04em;
     }
 
     .footer-credits span {
-      color: var(--cobalt-bright);
+      color: var(--tropical-violet);
     }
   </style>
 </head>
 <body>
 
-  <!-- Custom Cobalt/Navy Cursor Tracker -->
+  <!-- Custom Tropical Violet & Black Cursor Tracker -->
   <div class="custom-cursor-dot" id="cursorDot" aria-hidden="true"></div>
   <div class="custom-cursor-ring" id="cursorRing" aria-hidden="true"></div>
 
@@ -1360,33 +1418,30 @@
   </div>
 
   <!-- ========================================================
-       FLOATING TOP STATUS PILL
+       FLOATING TOP NAVBAR
+       (No 'Open for work', with profile image logo)
        ======================================================== -->
   <header class="top-pill-bar">
     <div class="brand-mark-group">
-      <div class="brand-monogram">GS</div>
+      <div class="brand-avatar-mini">
+        <img src="profile.jpeg" alt="Gurkirat Singh" onerror="this.src='https://ui-avatars.com/api/?name=Gurkirat+Singh&background=c084fc&color=000&bold=true'">
+      </div>
       <div class="brand-title">GURKIRAT SINGH</div>
-    </div>
-
-    <div class="status-badge-live">
-      <div class="status-dot-pulse"></div>
-      OPEN FOR WORK
     </div>
 
     <div class="top-pill-actions">
       <button class="pill-btn-mini pill-btn-outline" onclick="openResumeModal()" aria-label="Show Resume">
         <i class="fa-regular fa-file-lines"></i> RESUME
       </button>
-      <a href="mailto:gurkiratjap@gmail.com?subject=Project%20Inquiry%20-%20Gurkirat%20Singh&body=Hi%20Gurkirat," class="pill-btn-mini pill-btn-cobalt" aria-label="Email Me">
+      <a href="mailto:gurkiratjap@gmail.com?subject=Project%20Inquiry%20-%20Gurkirat%20Singh&body=Hi%20Gurkirat," class="pill-btn-mini pill-btn-violet" aria-label="Email Me">
         <i class="fa-solid fa-envelope"></i> EMAIL ME
       </a>
     </div>
   </header>
 
   <!-- ========================================================
-       HERO SECTION
-       Photo appears on the right side immediately when page opens!
-       Balanced, cohesive text size.
+       HERO SECTION — Cartoon Style, Simple Clear Copy
+       Photo on the right upon open
        ======================================================== -->
   <main>
     <section class="hero-section">
@@ -1396,27 +1451,26 @@
           <!-- Left side: Refined text, badge, buttons -->
           <div class="reveal-from-left">
             <div class="hero-pill-tag">
-              <i class="fa-solid fa-bolt"></i> AI ENGINEER &amp; FULL STACK DEVELOPER
+              <i class="fa-solid fa-code"></i> FULL STACK WEB DEVELOPER
             </div>
 
             <h1 class="hero-title">
               GURKIRAT SINGH LOHAT <br>
-              <span class="text-cobalt">INTELLIGENT SYSTEMS</span> &amp; SCALABLE SOFTWARE
+              <span class="text-violet">"Building Things From Scratch"</span>
             </h1>
 
             <p class="hero-tagline">
-              Third-year CSE student at <strong>GNDEC Ludhiana</strong> &amp; intern at <strong>AlertEnterprise</strong>. 
-              Engineering production-grade applications combining <strong>Next.js, Python, C++, and AI/ML</strong>.
+              3rd-year CSE student at <strong>GNDEC Ludhiana</strong>. Building web applications in <strong>Next.js</strong> and using <strong>Python</strong>. Completed software engineering internship at <strong>AlertEnterprise</strong> and also at <strong>InAmigoes Foundation</strong>.
             </p>
 
             <div class="hero-cta-group">
-              <a href="mailto:gurkiratjap@gmail.com?subject=Opportunity%20%2F%20Collaboration&body=Hi%20Gurkirat,%0D%0A%0D%0AI%20checked%20out%20your%20portfolio..." class="btn-simple btn-simple-cobalt">
+              <a href="mailto:gurkiratjap@gmail.com?subject=Hello%20Gurkirat&body=Hi%20Gurkirat," class="btn-simple btn-simple-violet">
                 <i class="fa-solid fa-paper-plane"></i> CONTACT ME
               </a>
-              <button class="btn-simple btn-simple-transparent" onclick="openResumeModal()">
+              <button class="btn-simple btn-simple-dark" onclick="openResumeModal()">
                 <i class="fa-regular fa-file-lines"></i> SHOW MY RESUME
               </button>
-              <button class="btn-simple btn-simple-transparent" onclick="copyEmailToClipboard()">
+              <button class="btn-simple btn-simple-dark" onclick="copyEmailToClipboard()">
                 <i class="fa-regular fa-copy"></i> COPY EMAIL
               </button>
             </div>
@@ -1426,7 +1480,7 @@
           <div class="reveal-from-right">
             <div class="hero-photo-card">
               <div class="hero-photo-box">
-                <img src="profile.jpeg" alt="Gurkirat Singh Lohat" onerror="this.src='https://ui-avatars.com/api/?name=Gurkirat+Singh&background=0a1224&color=3b82f6&size=400&bold=true'">
+                <img src="profile.jpeg" alt="Gurkirat Singh Lohat" onerror="this.src='https://ui-avatars.com/api/?name=Gurkirat+Singh&background=c084fc&color=000&size=400&bold=true'">
               </div>
               <div class="hero-photo-footer">
                 <span class="hero-photo-name">Gurkirat Singh Lohat</span>
@@ -1440,36 +1494,38 @@
     </section>
 
     <!-- ========================================================
-         HIGHLIGHTS & CORE FOCUS — Consistent Square Cards
-         Transitions smoothly from left and right on scroll (both ways)
+         WHAT I DO — Varied Purple/Violet Cartoon Boxes
+         Card 1: Tropical Violet (Black font)
+         Card 2: Bright Violet (White font)
+         Card 3: Electric Aubergine (White font)
          ======================================================== -->
     <section class="section-wrap" id="about">
       <div class="wrap">
 
         <div class="section-header-curved reveal-from-left">
           <div class="section-tag-pill">
-            <i class="fa-solid fa-layer-group"></i> EXPERIENCE &amp; CAPABILITIES
+            <i class="fa-solid fa-user"></i> ABOUT ME
           </div>
-          <h2 class="section-heading-lg">WHAT I BRING TO THE TABLE</h2>
-          <p class="section-subtext">Balanced engineering focus merging scalable full-stack web with modern Artificial Intelligence.</p>
+          <h2 class="section-heading-lg">WHAT I DO</h2>
+          <p class="section-subtext">A simple overview of my experience, what I build, and the tools I use.</p>
         </div>
 
         <div class="square-card-grid">
 
-          <!-- Card 1: AlertEnterprise -->
-          <div class="square-card reveal-from-left">
+          <!-- Card 1: AlertEnterprise (Theme: Bright Violet, White Font) -->
+          <div class="cartoon-card theme-bright-violet reveal-from-left">
             <div>
-              <div class="card-icon-box"><i class="fa-solid fa-building-shield"></i></div>
-              <div class="card-label-mini">CURRENT INDUSTRY ROLE</div>
+              <div class="card-icon-box"><i class="fa-solid fa-building-user"></i></div>
+              <div class="card-label-mini">WORK EXPERIENCE</div>
               <h3 class="card-title-main">Software Engineering Intern</h3>
               <p class="card-text-body">
-                AlertEnterprise: Enterprise software engineering, team collaboration, and security systems. Previously built AI web solutions at InAmigoes Foundation.
+                Completed my software engineering internship at AlertEnterprise, working with the team on enterprise software and cybersecurity features.
               </p>
             </div>
             <div class="metric-row">
               <div class="metric-item">
-                <span class="metric-val">2+</span>
-                <span class="metric-caption">INTERNSHIPS</span>
+                <span class="metric-val">1</span>
+                <span class="metric-caption">INTERNSHIP COMPLETED</span>
               </div>
               <div class="metric-item">
                 <span class="metric-val">3+</span>
@@ -1478,39 +1534,39 @@
             </div>
           </div>
 
-          <!-- Card 2: Philosophy -->
-          <div class="square-card reveal-from-right">
+          <!-- Card 2: Next.js & Python (Theme: Tropical Violet, Black Font) -->
+          <div class="cartoon-card theme-tropical reveal-from-right">
             <div>
-              <div class="card-icon-box"><i class="fa-solid fa-brain"></i></div>
-              <div class="card-label-mini">CORE PHILOSOPHY</div>
-              <h3 class="card-title-main">AI + Scalable Web</h3>
+              <div class="card-icon-box"><i class="fa-solid fa-laptop-code"></i></div>
+              <div class="card-label-mini">DEVELOPMENT FOCUS</div>
+              <h3 class="card-title-main">Next.js &amp; Python</h3>
               <p class="card-text-body">
-                Merging LLMs, modern web architecture, and clean code to build software that creates measurable, real-world utility without unnecessary complexity.
+                I build full-stack web applications from scratch using Next.js on the frontend, and Python for backend APIs and machine learning.
               </p>
             </div>
             <div class="skills-pill-group">
-              <span class="skill-pill"><i class="fa-solid fa-microchip"></i> AI / ML</span>
-              <span class="skill-pill"><i class="fa-solid fa-layer-group"></i> Full Stack</span>
+              <span class="skill-pill"><i class="fa-brands fa-react"></i> Next.js</span>
+              <span class="skill-pill"><i class="fa-brands fa-python"></i> Python</span>
             </div>
           </div>
 
-          <!-- Card 3: Technical Arsenal -->
-          <div class="square-card reveal-from-left">
+          <!-- Card 3: Skills (Theme: Electric Aubergine, White Font) -->
+          <div class="cartoon-card theme-electric-aubergine reveal-from-left">
             <div>
-              <div class="card-icon-box"><i class="fa-solid fa-code"></i></div>
-              <div class="card-label-mini">CORE ARSENAL</div>
-              <h3 class="card-title-main">Languages &amp; Frameworks</h3>
-              <p class="card-text-body">Production technologies I wield to deliver fast, reliable, intelligent applications.</p>
+              <div class="card-icon-box"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+              <div class="card-label-mini">TECH STACK</div>
+              <h3 class="card-title-main">Tools &amp; Languages</h3>
+              <p class="card-text-body">Technologies I use regularly to build websites and projects.</p>
             </div>
             <div class="skills-pill-group">
-              <span class="skill-pill"><i class="fa-brands fa-python"></i> Python</span>
-              <span class="skill-pill"><i class="fa-solid fa-c"></i> C++</span>
               <span class="skill-pill"><i class="fa-brands fa-react"></i> Next.js</span>
+              <span class="skill-pill"><i class="fa-brands fa-python"></i> Python</span>
               <span class="skill-pill"><i class="fa-brands fa-js"></i> TypeScript</span>
-              <span class="skill-pill"><i class="fa-solid fa-robot"></i> LangChain</span>
-              <span class="skill-pill"><i class="fa-solid fa-chart-line"></i> PyTorch</span>
+              <span class="skill-pill"><i class="fa-brands fa-js"></i> JavaScript</span>
+              <span class="skill-pill"><i class="fa-solid fa-c"></i> C++</span>
               <span class="skill-pill"><i class="fa-brands fa-git-alt"></i> Git</span>
               <span class="skill-pill"><i class="fa-brands fa-linux"></i> Linux</span>
+              <span class="skill-pill"><i class="fa-brands fa-html5"></i> HTML/CSS</span>
             </div>
           </div>
 
@@ -1520,36 +1576,36 @@
     </section>
 
     <!-- ========================================================
-         PROJECTS SECTION — Square Cards, Clean Borders
-         Clicking opens the quick modal with Demo & GitHub code
+         PROJECTS SECTION — Varied Cartoon Boxes
+         Different purple/violet backgrounds, strictly black & white fonts
          ======================================================== -->
     <section class="section-wrap" id="projects">
       <div class="wrap">
 
         <div class="section-header-curved reveal-from-left">
           <div class="section-tag-pill">
-            <i class="fa-solid fa-cubes"></i> SELECTED WORK
+            <i class="fa-solid fa-cubes"></i> PROJECTS
           </div>
-          <h2 class="section-heading-lg">FEATURED PROJECTS</h2>
-          <p class="section-subtext">Click any project to trigger an instant modal with details, features, and code links.</p>
+          <h2 class="section-heading-lg">THINGS I HAVE BUILT</h2>
+          <p class="section-subtext">Click on any project to see quick details, live demo, and GitHub link.</p>
         </div>
 
         <div class="projects-grid">
 
-          <!-- Project Card 1: GitGrade -->
-          <div class="project-card-interactive reveal-from-left" onclick="openProjectModal('gitgrade')" role="button" tabindex="0" aria-label="View GitGrade Project">
+          <!-- Project Card 1: GitGrade (Theme: Tropical Violet, Black Font) -->
+          <div class="project-card-interactive theme-tropical reveal-from-left" onclick="openProjectModal('gitgrade')" role="button" tabindex="0" aria-label="View GitGrade Project">
             <div class="project-thumb-container">
-              <span class="project-category-badge">AI &amp; DEVTOOLS</span>
+              <span class="project-category-badge">WEB APP</span>
               <div class="project-thumb-visual">
                 <svg width="140" height="90" viewBox="0 0 140 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="15" y="15" width="110" height="60" rx="12" stroke="#2563eb" stroke-width="1.5" fill="#060b18" />
-                  <path d="M40 45L55 60M55 30L40 45" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" />
-                  <path d="M100 45L85 30M85 60L100 45" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" />
-                  <circle cx="70" cy="45" r="7" fill="#3b82f6" />
+                  <rect x="15" y="15" width="110" height="60" rx="10" stroke="#c084fc" stroke-width="2.5" fill="#120324" />
+                  <path d="M40 45L55 60M55 30L40 45" stroke="#c084fc" stroke-width="3" stroke-linecap="round" />
+                  <path d="M100 45L85 30M85 60L100 45" stroke="#ffffff" stroke-width="3" stroke-linecap="round" />
+                  <circle cx="70" cy="45" r="7" fill="#c084fc" />
                 </svg>
               </div>
               <div class="project-quick-view-hint">
-                <i class="fa-solid fa-expand"></i> QUICK VIEW
+                <i class="fa-solid fa-expand"></i> VIEW DETAILS
               </div>
             </div>
 
@@ -1557,32 +1613,31 @@
               <div>
                 <h3 class="project-card-title">GitGrade</h3>
                 <p class="project-summary-short">
-                  AI-powered GitHub repository analyzer evaluating code hygiene, structure, and documentation with automated improvements.
+                  A web app that scans GitHub repositories and gives clear suggestions to improve code structure and profile READMEs.
                 </p>
               </div>
               <div class="project-tags-row">
                 <span class="project-tag-item">Next.js</span>
                 <span class="project-tag-item">TypeScript</span>
-                <span class="project-tag-item">LangChain</span>
-                <span class="project-tag-item">AI/ML</span>
+                <span class="project-tag-item">Python</span>
               </div>
             </div>
           </div>
 
-          <!-- Project Card 2: Heart Disease Predictor -->
-          <div class="project-card-interactive reveal-from-right" onclick="openProjectModal('heart')" role="button" tabindex="0" aria-label="View Heart Disease Predictor">
+          <!-- Project Card 2: Heart Disease Predictor (Theme: Purple Rain, White Font) -->
+          <div class="project-card-interactive theme-purple-rain reveal-from-right" onclick="openProjectModal('heart')" role="button" tabindex="0" aria-label="View Heart Disease Predictor">
             <div class="project-thumb-container">
               <span class="project-category-badge">MACHINE LEARNING</span>
               <div class="project-thumb-visual">
                 <svg width="140" height="90" viewBox="0 0 140 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="15" y="15" width="110" height="60" rx="12" stroke="#1d4ed8" stroke-width="1.5" fill="#060b18" />
-                  <path d="M30 48H50L58 28L68 62L76 42L82 48H110" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <rect x="15" y="15" width="110" height="60" rx="10" stroke="#9333ea" stroke-width="2.5" fill="#120324" />
+                  <path d="M30 48H50L58 28L68 62L76 42L82 48H110" stroke="#c084fc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
                   <circle cx="58" cy="28" r="4" fill="#ffffff" />
-                  <circle cx="68" cy="62" r="4" fill="#2563eb" />
+                  <circle cx="68" cy="62" r="4" fill="#c084fc" />
                 </svg>
               </div>
               <div class="project-quick-view-hint">
-                <i class="fa-solid fa-expand"></i> QUICK VIEW
+                <i class="fa-solid fa-expand"></i> VIEW DETAILS
               </div>
             </div>
 
@@ -1590,79 +1645,76 @@
               <div>
                 <h3 class="project-card-title">Heart Disease Predictor</h3>
                 <p class="project-summary-short">
-                  Clinical diagnostic ML model estimating cardiovascular risk profiles with high precision and statistical feature explainability.
+                  A machine learning app that checks patient health numbers to calculate the risk of heart disease.
                 </p>
               </div>
               <div class="project-tags-row">
                 <span class="project-tag-item">Python</span>
                 <span class="project-tag-item">Scikit-Learn</span>
-                <span class="project-tag-item">Pandas</span>
                 <span class="project-tag-item">Streamlit</span>
               </div>
             </div>
           </div>
 
-          <!-- Project Card 3: LeetCode Suggestions -->
-          <div class="project-card-interactive reveal-from-left" onclick="openProjectModal('leetcode')" role="button" tabindex="0" aria-label="View LeetCode Engine">
+          <!-- Project Card 3: LeetCode Suggestions (Theme: Bright Violet, White Font) -->
+          <div class="project-card-interactive theme-bright-violet reveal-from-left" onclick="openProjectModal('leetcode')" role="button" tabindex="0" aria-label="View LeetCode Engine">
             <div class="project-thumb-container">
-              <span class="project-category-badge">ALGORITHMS &amp; WEB</span>
+              <span class="project-category-badge">WEB APP</span>
               <div class="project-thumb-visual">
                 <svg width="140" height="90" viewBox="0 0 140 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="15" y="15" width="110" height="60" rx="12" stroke="#2563eb" stroke-width="1.5" fill="#060b18" />
-                  <circle cx="45" cy="45" r="9" stroke="#ffffff" stroke-width="1.5" />
-                  <path d="M55 45H85" stroke="#3b82f6" stroke-width="2" />
-                  <circle cx="95" cy="45" r="9" fill="#2563eb" />
+                  <rect x="15" y="15" width="110" height="60" rx="10" stroke="#c084fc" stroke-width="2.5" fill="#120324" />
+                  <circle cx="45" cy="45" r="9" stroke="#ffffff" stroke-width="2" />
+                  <path d="M55 45H85" stroke="#c084fc" stroke-width="2.5" />
+                  <circle cx="95" cy="45" r="9" fill="#c084fc" />
                 </svg>
               </div>
               <div class="project-quick-view-hint">
-                <i class="fa-solid fa-expand"></i> QUICK VIEW
+                <i class="fa-solid fa-expand"></i> VIEW DETAILS
               </div>
             </div>
 
             <div class="project-content-block">
               <div>
-                <h3 class="project-card-title">LeetCode Engine</h3>
+                <h3 class="project-card-title">LeetCode Problem Suggester</h3>
                 <p class="project-summary-short">
-                  Dynamic algorithmic roadmapping platform helping developers master data structures with tailored problem recommendations.
+                  A tool that looks at your LeetCode profile and recommends which topics or problems you should practice next.
                 </p>
               </div>
               <div class="project-tags-row">
                 <span class="project-tag-item">React</span>
                 <span class="project-tag-item">Python</span>
                 <span class="project-tag-item">FastAPI</span>
-                <span class="project-tag-item">Algorithms</span>
               </div>
             </div>
           </div>
 
-          <!-- Project Card 4: Suspicious Email Shield -->
-          <div class="project-card-interactive reveal-from-right" onclick="openProjectModal('emailshield')" role="button" tabindex="0" aria-label="View Suspicious Email Shield">
+          <!-- Project Card 4: Suspicious Email Scanner (Theme: Electric Aubergine, White Font) -->
+          <div class="project-card-interactive theme-electric-aubergine reveal-from-right" onclick="openProjectModal('emailshield')" role="button" tabindex="0" aria-label="View Suspicious Email Shield">
             <div class="project-thumb-container">
-              <span class="project-category-badge">CYBERSECURITY AI</span>
+              <span class="project-category-badge">CYBERSECURITY</span>
               <div class="project-thumb-visual">
                 <svg width="140" height="90" viewBox="0 0 140 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="20" y="20" width="100" height="50" rx="8" stroke="#2563eb" stroke-width="1.5" fill="#060b18" />
-                  <path d="M22 24L70 52L118 24" stroke="#3b82f6" stroke-width="1.8" />
-                  <path d="M70 38V60M60 49H80" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" />
+                  <rect x="20" y="20" width="100" height="50" rx="8" stroke="#a855f7" stroke-width="2.5" fill="#120324" />
+                  <path d="M22 24L70 52L118 24" stroke="#c084fc" stroke-width="2.5" />
+                  <path d="M70 38V60M60 49H80" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" />
                 </svg>
               </div>
               <div class="project-quick-view-hint">
-                <i class="fa-solid fa-expand"></i> QUICK VIEW
+                <i class="fa-solid fa-expand"></i> VIEW DETAILS
               </div>
             </div>
 
             <div class="project-content-block">
               <div>
-                <h3 class="project-card-title">Suspicious Email Shield</h3>
+                <h3 class="project-card-title">Suspicious Email Scanner</h3>
                 <p class="project-summary-short">
-                  NLP-driven email threat &amp; phishing detection engine engineered during the AlertEnterprise Hackathon.
+                  Built during a hackathon to inspect email text and flag phishing links, fake senders, and urgent scams.
                 </p>
               </div>
               <div class="project-tags-row">
-                <span class="project-tag-item">NLP</span>
                 <span class="project-tag-item">Python</span>
-                <span class="project-tag-item">Security ML</span>
-                <span class="project-tag-item">AlertEnterprise</span>
+                <span class="project-tag-item">NLP</span>
+                <span class="project-tag-item">Flask</span>
               </div>
             </div>
           </div>
@@ -1673,50 +1725,50 @@
     </section>
 
     <!-- ========================================================
-         HACKATHONS SECTION — Consistent Square Cards
+         HACKATHONS SECTION — Varied Purple Boxes
          ======================================================== -->
     <section class="section-wrap" id="hackathons">
       <div class="wrap">
 
         <div class="section-header-curved reveal-from-left">
           <div class="section-tag-pill">
-            <i class="fa-solid fa-trophy"></i> COMPETITIVE SPRINTS
+            <i class="fa-solid fa-trophy"></i> HACKATHONS
           </div>
-          <h2 class="section-heading-lg">HACKATHONS &amp; SPRINT WINS</h2>
-          <p class="section-subtext">Building under tight deadlines, collaborating in agile teams, and shipping full products.</p>
+          <h2 class="section-heading-lg">HACKATHONS &amp; COMPETITIONS</h2>
+          <p class="section-subtext">Building projects under tight deadlines and competing in teams.</p>
         </div>
 
         <div class="square-card-grid">
 
-          <div class="square-card reveal-from-left">
+          <div class="cartoon-card theme-bright-violet reveal-from-left">
             <div>
               <div class="card-icon-box"><i class="fa-solid fa-award"></i></div>
-              <div class="card-label-mini">NATIONAL LEVEL</div>
+              <div class="card-label-mini">NATIONAL FINALS</div>
               <h3 class="card-title-main">Hackanauts National</h3>
               <p class="card-text-body">
-                National-level hackathon finalist. Collaborated under time pressure to design, build, and pitch an end-to-end intelligent product solution.
+                Reached the finals in a national hackathon, working together with a team to build and present a working product in 36 hours.
               </p>
             </div>
           </div>
 
-          <div class="square-card reveal-up">
+          <div class="cartoon-card theme-tropical reveal-up">
             <div>
               <div class="card-icon-box"><i class="fa-solid fa-laptop-code"></i></div>
-              <div class="card-label-mini">OPEN SOURCE SPRINT</div>
+              <div class="card-label-mini">ONLINE HACKATHON</div>
               <h3 class="card-title-main">Git Grade Hackathon</h3>
               <p class="card-text-body">
-                Engineered an AI GitHub repository auditing tool that scored repositories and provided concrete refactoring blueprints.
+                Built an online analyzer for GitHub repos that points out what can be improved in project code and READMEs.
               </p>
             </div>
           </div>
 
-          <div class="square-card reveal-from-right">
+          <div class="cartoon-card theme-electric-aubergine reveal-from-right">
             <div>
               <div class="card-icon-box"><i class="fa-solid fa-shield-halved"></i></div>
-              <div class="card-label-mini">ENTERPRISE SPRINT</div>
+              <div class="card-label-mini">SECURITY HACKATHON</div>
               <h3 class="card-title-main">AlertEnterprise Hack</h3>
               <p class="card-text-body">
-                Built an intelligent suspicious email anomaly detector in a collaborative team sprint, receiving high recognition for cybersecurity utility.
+                Built a working email scanner that flags suspicious links and phishing patterns, winning recognition from judges.
               </p>
             </div>
           </div>
@@ -1734,10 +1786,10 @@
 
         <div class="section-header-curved reveal-from-left">
           <div class="section-tag-pill">
-            <i class="fa-solid fa-chart-simple"></i> LIVE CODING ACTIVITY
+            <i class="fa-solid fa-chart-simple"></i> CODING ACTIVITY
           </div>
           <h2 class="section-heading-lg">GITHUB &amp; LEETCODE STATS</h2>
-          <p class="section-subtext">Live metrics pulled from developer APIs reflecting ongoing practice and open-source contributions.</p>
+          <p class="section-subtext">Live numbers pulled directly from my GitHub and LeetCode accounts.</p>
         </div>
 
         <div class="stats-card-grid">
@@ -1746,15 +1798,15 @@
             <div class="stats-box-header">
               <span class="stats-box-title"><i class="fa-brands fa-github"></i> GitHub Overview</span>
             </div>
-            <img src="https://github-readme-stats.vercel.app/api?username=codingmastergurkirat&show_icons=true&hide_border=true&bg_color=0a1224&title_color=3b82f6&text_color=ffffff&icon_color=2563eb" alt="Gurkirat GitHub stats" loading="lazy">
-            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=codingmastergurkirat&layout=compact&hide_border=true&bg_color=0a1224&title_color=3b82f6&text_color=ffffff" alt="Gurkirat Top Languages" loading="lazy">
+            <img src="https://github-readme-stats.vercel.app/api?username=codingmastergurkirat&show_icons=true&hide_border=true&bg_color=2e0854&title_color=c084fc&text_color=ffffff&icon_color=a855f7" alt="Gurkirat GitHub stats" loading="lazy">
+            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=codingmastergurkirat&layout=compact&hide_border=true&bg_color=2e0854&title_color=c084fc&text_color=ffffff" alt="Gurkirat Top Languages" loading="lazy">
           </div>
 
           <div class="stats-curved-box reveal-from-right">
             <div class="stats-box-header">
-              <span class="stats-box-title"><i class="fa-solid fa-fire"></i> Coding Streak &amp; LeetCode</span>
+              <span class="stats-box-title"><i class="fa-solid fa-fire"></i> GitHub Streak &amp; LeetCode</span>
             </div>
-            <img src="https://streak-stats.demolab.com/?user=codingmastergurkirat&background=0a1224&border=1e3a8a&stroke=2563eb&ring=3b82f6&fire=3b82f6&currStreakLabel=ffffff&sideLabels=ffffff&currStreakNum=ffffff&sideNums=ffffff&dates=888888&hide_border=true" alt="Gurkirat GitHub Streak" loading="lazy">
+            <img src="https://streak-stats.demolab.com/?user=codingmastergurkirat&background=2e0854&border=000000&stroke=a855f7&ring=c084fc&fire=c084fc&currStreakLabel=ffffff&sideLabels=ffffff&currStreakNum=ffffff&sideNums=ffffff&dates=888888&hide_border=true" alt="Gurkirat GitHub Streak" loading="lazy">
             <img src="https://leetcard.jacoblin.cool/gurkiratsingh79?theme=dark&font=Karma&ext=heatmap" alt="Gurkirat LeetCode Stats" loading="lazy">
           </div>
 
@@ -1771,22 +1823,22 @@
 
         <div class="contact-banner-card reveal-up">
           <h2 class="contact-big-title">
-            LET'S CREATE SOMETHING <br>
-            <span>EXTRAORDINARY</span>
+            LET'S WORK <br>
+            <span>TOGETHER</span>
           </h2>
           <p class="contact-subtext">
-            Available for software engineering internships, AI engineering roles, and scalable web development collaborations.
+            Looking for internships, full stack web projects, or software engineering opportunities. Drop me an email anytime!
           </p>
 
           <div class="contact-action-row">
-            <a href="mailto:gurkiratjap@gmail.com?subject=Opportunity%20Inquiry%20-%20Gurkirat%20Singh&body=Hi%20Gurkirat," class="btn-simple btn-simple-cobalt">
-              <i class="fa-solid fa-envelope"></i> SEND AN EMAIL DIRECTLY
+            <a href="mailto:gurkiratjap@gmail.com?subject=Hello%20Gurkirat&body=Hi%20Gurkirat," class="btn-simple btn-simple-violet">
+              <i class="fa-solid fa-envelope"></i> SEND AN EMAIL
             </a>
             <div class="email-display-badge" onclick="copyEmailToClipboard()" role="button" tabindex="0" title="Click to copy email address">
-              <i class="fa-regular fa-copy" style="color: var(--cobalt-bright);"></i>
+              <i class="fa-regular fa-copy" style="color: var(--black);"></i>
               <span>gurkiratjap@gmail.com</span>
             </div>
-            <button class="btn-simple btn-simple-transparent" onclick="openResumeModal()">
+            <button class="btn-simple btn-simple-dark" onclick="openResumeModal()">
               <i class="fa-regular fa-file-lines"></i> SHOW MY RESUME
             </button>
           </div>
@@ -1839,7 +1891,7 @@
   <div class="modal-overlay" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalProjectTitle">
     <div class="modal-box-curved">
       <div class="modal-header-bar">
-        <span class="modal-header-badge" id="modalProjectCategory">AI &amp; DEVTOOLS</span>
+        <span class="modal-header-badge" id="modalProjectCategory">WEB APP</span>
         <button class="modal-close-cross" onclick="closeProjectModal()" aria-label="Close dialog">
           <i class="fa-solid fa-xmark"></i>
         </button>
@@ -1856,24 +1908,24 @@
         </div>
 
         <div>
-          <h4 style="font-family: var(--font-anta); font-size: 0.9rem; color: var(--cobalt-bright); margin-bottom: 0.4rem;">KEY HIGHLIGHTS</h4>
+          <h4 style="font-family: var(--font-anta); font-size: 0.9rem; color: var(--tropical-violet); margin-bottom: 0.4rem;">KEY HIGHLIGHTS</h4>
           <ul class="modal-highlights-list" id="modalProjectHighlights">
             <!-- Dynamic highlights -->
           </ul>
         </div>
 
         <div>
-          <h4 style="font-family: var(--font-anta); font-size: 0.9rem; color: var(--cobalt-bright); margin-bottom: 0.4rem;">TECH STACK</h4>
+          <h4 style="font-family: var(--font-anta); font-size: 0.9rem; color: var(--tropical-violet); margin-bottom: 0.4rem;">TECH STACK</h4>
           <div class="skills-pill-group" id="modalProjectTech">
             <!-- Dynamic tech pills -->
           </div>
         </div>
 
         <div class="modal-actions-footer">
-          <a href="#" id="modalDemoLink" target="_blank" rel="noopener noreferrer" class="btn-simple btn-simple-cobalt" style="padding: 0.65rem 1.3rem; font-size: 0.85rem;">
+          <a href="#" id="modalDemoLink" target="_blank" rel="noopener noreferrer" class="btn-simple btn-simple-violet" style="padding: 0.65rem 1.3rem; font-size: 0.85rem;">
             <i class="fa-solid fa-arrow-up-right-from-square"></i> LIVE DEMO
           </a>
-          <a href="#" id="modalGithubLink" target="_blank" rel="noopener noreferrer" class="btn-simple btn-simple-transparent" style="padding: 0.65rem 1.3rem; font-size: 0.85rem;">
+          <a href="#" id="modalGithubLink" target="_blank" rel="noopener noreferrer" class="btn-simple btn-simple-dark" style="padding: 0.65rem 1.3rem; font-size: 0.85rem;">
             <i class="fa-brands fa-github"></i> GITHUB CODE
           </a>
         </div>
@@ -1887,7 +1939,7 @@
   <div class="modal-overlay" id="resumeModal" role="dialog" aria-modal="true" aria-labelledby="resumeModalTitle">
     <div class="modal-box-curved">
       <div class="modal-header-bar">
-        <span class="modal-header-badge"><i class="fa-solid fa-file-lines"></i> CURRICULUM VITAE</span>
+        <span class="modal-header-badge"><i class="fa-solid fa-file-lines"></i> RESUME</span>
         <button class="modal-close-cross" onclick="closeResumeModal()" aria-label="Close dialog">
           <i class="fa-solid fa-xmark"></i>
         </button>
@@ -1897,10 +1949,10 @@
         <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem;">
           <div>
             <h3 class="modal-project-title" id="resumeModalTitle">Gurkirat Singh Lohat</h3>
-            <p class="modal-project-summary">AI Engineer &amp; Full Stack Web Developer • CSE '28 @ GNDEC</p>
+            <p class="modal-project-summary">Full Stack Web Developer • CSE '28 @ GNDEC</p>
           </div>
           <!-- Download Resume Button inside popup -->
-          <a href="resume.pdf" download="Gurkirat_Singh_Resume.pdf" class="btn-simple btn-simple-cobalt" style="padding: 0.65rem 1.3rem; font-size: 0.85rem;">
+          <a href="resume.pdf" download="Gurkirat_Singh_Resume.pdf" class="btn-simple btn-simple-violet" style="padding: 0.65rem 1.3rem; font-size: 0.85rem;">
             <i class="fa-solid fa-download"></i> DOWNLOAD RESUME (PDF)
           </a>
         </div>
@@ -1912,19 +1964,19 @@
             <i class="fa-solid fa-file-pdf resume-fallback-icon"></i>
             <h4 style="font-family: var(--font-anta); color: var(--white); font-size: 1.1rem;">Resume Preview Ready</h4>
             <p style="font-size: 0.88rem; max-width: 44ch;">
-              Drop your <code>resume.png</code> or <code>resume.jpg</code> into this directory to show your visual resume image, and <code>resume.pdf</code> for one-click downloads.
+              Drop your <code>resume.png</code> or <code>resume.jpg</code> into this folder to see the image preview here, and add <code>resume.pdf</code> for direct downloads.
             </p>
-            <a href="resume.pdf" download="Gurkirat_Singh_Resume.pdf" class="btn-simple btn-simple-cobalt" style="margin-top: 0.5rem;">
+            <a href="resume.pdf" download="Gurkirat_Singh_Resume.pdf" class="btn-simple btn-simple-violet" style="margin-top: 0.5rem;">
               <i class="fa-solid fa-download"></i> Download resume.pdf
             </a>
           </div>
         </div>
 
         <div class="modal-actions-footer" style="justify-content: space-between; align-items: center;">
-          <a href="mailto:gurkiratjap@gmail.com?subject=Resume%20Inquiry%20-%20Gurkirat%20Singh" class="btn-simple btn-simple-transparent" style="padding: 0.65rem 1.3rem; font-size: 0.85rem;">
-            <i class="fa-solid fa-envelope"></i> CONTACT DIRECTLY
+          <a href="mailto:gurkiratjap@gmail.com?subject=Resume%20Inquiry%20-%20Gurkirat%20Singh" class="btn-simple btn-simple-dark" style="padding: 0.65rem 1.3rem; font-size: 0.85rem;">
+            <i class="fa-solid fa-envelope"></i> CONTACT ME
           </a>
-          <button onclick="window.print()" class="btn-simple btn-simple-transparent" style="padding: 0.65rem 1.3rem; font-size: 0.85rem;">
+          <button onclick="window.print()" class="btn-simple btn-simple-dark" style="padding: 0.65rem 1.3rem; font-size: 0.85rem;">
             <i class="fa-solid fa-print"></i> PRINT
           </button>
         </div>
@@ -1934,7 +1986,7 @@
 
   <!-- Toast Notification Pill -->
   <div class="toast-pill" id="toastPill" role="status" aria-live="polite">
-    <i class="fa-solid fa-check" style="color: var(--cobalt-bright); margin-right: 6px;"></i>
+    <i class="fa-solid fa-check" style="color: var(--black); margin-right: 6px;"></i>
     Email copied to clipboard!
   </div>
 
@@ -1942,7 +1994,7 @@
   <footer>
     <div class="wrap">
       <div class="footer-credits">
-        DESIGNED &amp; ENGINEERED BY <span>GURKIRAT SINGH LOHAT</span> • © <span id="yearCurrent">2026</span>
+        GURKIRAT SINGH LOHAT • © <span id="yearCurrent">2026</span>
       </div>
     </div>
   </footer>
@@ -1958,7 +2010,7 @@
       const yearEl = document.getElementById('yearCurrent');
       if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-      // 2. Custom Cursor (Cobalt / Navy)
+      // 2. Custom Cursor (Tropical Violet & Black)
       const cursorDot = document.getElementById('cursorDot');
       const cursorRing = document.getElementById('cursorRing');
       let mouseX = -100, mouseY = -100;
@@ -1984,7 +2036,7 @@
       }
       renderCursor();
 
-      document.querySelectorAll('a, button, [role="button"], .project-card-interactive, .square-card').forEach(function(el) {
+      document.querySelectorAll('a, button, [role="button"], .project-card-interactive, .cartoon-card').forEach(function(el) {
         el.addEventListener('mouseenter', function() {
           if (cursorRing) cursorRing.classList.add('cursor-hover');
         });
@@ -2018,7 +2070,6 @@
           if (entry.isIntersecting) {
             entry.target.classList.add('reveal-active');
           } else {
-            // Remove when leaving viewport so animation occurs in both directions!
             entry.target.classList.remove('reveal-active');
           }
         });
@@ -2036,86 +2087,86 @@
       const projectData = {
         gitgrade: {
           title: "GitGrade",
-          category: "AI & DEVTOOLS",
-          desc: "An intelligent GitHub repository analyzer that evaluates code hygiene, repository architecture, commit patterns, and documentation completeness. Powered by LangChain and LLMs to provide immediate actionable recommendations for developers.",
+          category: "WEB APP",
+          desc: "A web app that scans GitHub repositories and gives clear suggestions to improve code structure, commit habits, and profile READMEs.",
           highlights: [
-            "Automated multi-factor repository scoring & hygiene evaluation",
-            "Actionable LLM-driven suggestions to boost open-source presence",
-            "Instant GitHub API integration and developer profiling"
+            "Analyzes code quality and repository structure",
+            "Gives simple tips to make developer profiles look better",
+            "Uses GitHub API for quick repository analysis"
           ],
-          tech: ["Next.js", "TypeScript", "LangChain", "OpenAI API", "Tailwind CSS"],
+          tech: ["Next.js", "TypeScript", "Python", "Tailwind CSS"],
           demoUrl: "https://github.com/codingmastergurkirat",
           githubUrl: "https://github.com/codingmastergurkirat",
           bannerSvg: `
             <svg width="100%" height="100%" viewBox="0 0 400 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="400" height="180" fill="#060b18"/>
-              <circle cx="200" cy="90" r="50" stroke="#2563eb" stroke-width="2" stroke-dasharray="6 6"/>
-              <path d="M175 90L190 105M190 75L175 90" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
-              <path d="M225 90L210 75M210 105L225 90" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round"/>
-              <circle cx="200" cy="90" r="9" fill="#3b82f6"/>
-              <text x="200" y="145" text-anchor="middle" fill="#3b82f6" font-family="'Anta', sans-serif" font-size="12" letter-spacing="2">GITGRADE AI ENGINE</text>
+              <rect width="400" height="180" fill="#120324"/>
+              <circle cx="200" cy="90" r="50" stroke="#c084fc" stroke-width="2.5" stroke-dasharray="6 6"/>
+              <path d="M175 90L190 105M190 75L175 90" stroke="#c084fc" stroke-width="3" stroke-linecap="round"/>
+              <path d="M225 90L210 75M210 105L225 90" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="200" cy="90" r="9" fill="#c084fc"/>
+              <text x="200" y="145" text-anchor="middle" fill="#c084fc" font-family="'Anta', sans-serif" font-size="12" letter-spacing="2">GITGRADE</text>
             </svg>`
         },
         heart: {
           title: "Heart Disease Predictor",
           category: "MACHINE LEARNING",
-          desc: "A clinical healthcare diagnostic system built on Scikit-Learn that analyzes cardiovascular risk indicators. Uses statistical modeling and machine learning algorithms to predict heart disease risk probability with explainable features.",
+          desc: "A machine learning app that checks patient health numbers to calculate the risk of heart disease.",
           highlights: [
-            "Trained and evaluated on validated clinical healthcare datasets",
-            "Feature importance analysis for explainable diagnostic factors",
-            "Interactive Streamlit interface for doctors and researchers"
+            "Trained on real healthcare datasets",
+            "Simple web interface to enter patient numbers and see results",
+            "Explains which factors most affect the prediction"
           ],
-          tech: ["Python", "Scikit-Learn", "Pandas", "NumPy", "Streamlit"],
+          tech: ["Python", "Scikit-Learn", "Pandas", "Streamlit"],
           demoUrl: "https://github.com/codingmastergurkirat",
           githubUrl: "https://github.com/codingmastergurkirat",
           bannerSvg: `
             <svg width="100%" height="100%" viewBox="0 0 400 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="400" height="180" fill="#060b18"/>
-              <path d="M50 90H140L160 50L180 130L200 70L220 100H350" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect width="400" height="180" fill="#120324"/>
+              <path d="M50 90H140L160 50L180 130L200 70L220 100H350" stroke="#c084fc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
               <circle cx="160" cy="50" r="4" fill="#ffffff"/>
-              <circle cx="180" cy="130" r="4" fill="#2563eb"/>
-              <text x="200" y="155" text-anchor="middle" fill="#ffffff" font-family="'Anta', sans-serif" font-size="12" letter-spacing="2">CARDIOVASCULAR ML ENGINE</text>
+              <circle cx="180" cy="130" r="4" fill="#c084fc"/>
+              <text x="200" y="155" text-anchor="middle" fill="#ffffff" font-family="'Anta', sans-serif" font-size="12" letter-spacing="2">HEART DISEASE PREDICTOR</text>
             </svg>`
         },
         leetcode: {
-          title: "LeetCode Suggestion Engine",
-          category: "ALGORITHMS & ROADMAPS",
-          desc: "A personalized algorithm practice companion that maps a developer's LeetCode submission history, identifies weak conceptual areas (graphs, DP, trees), and provides targeted problem sequences to accelerate interview readiness.",
+          title: "LeetCode Problem Suggester",
+          category: "WEB APP",
+          desc: "A tool that looks at your LeetCode profile and recommends which topics or problems you should practice next.",
           highlights: [
-            "Algorithmic weak-point identification based on submission performance",
-            "Curated problem roadmaps mapped by difficulty and data structure",
-            "Responsive dashboard interface with live stats tracking"
+            "Finds weak topics based on solved problems",
+            "Step-by-step problem roadmaps by difficulty",
+            "Clean dashboard to track daily progress"
           ],
-          tech: ["React", "Python", "FastAPI", "LeetCode API", "Algorithms"],
+          tech: ["React", "Python", "FastAPI"],
           demoUrl: "https://github.com/codingmastergurkirat",
           githubUrl: "https://github.com/codingmastergurkirat",
           bannerSvg: `
             <svg width="100%" height="100%" viewBox="0 0 400 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="400" height="180" fill="#060b18"/>
-              <circle cx="130" cy="90" r="16" stroke="#2563eb" stroke-width="2"/>
+              <rect width="400" height="180" fill="#120324"/>
+              <circle cx="130" cy="90" r="16" stroke="#c084fc" stroke-width="2.5"/>
               <path d="M148 90H252" stroke="#ffffff" stroke-width="2" stroke-dasharray="4 4"/>
-              <circle cx="270" cy="90" r="16" fill="#3b82f6"/>
-              <text x="200" y="145" text-anchor="middle" fill="#3b82f6" font-family="'Anta', sans-serif" font-size="12" letter-spacing="2">ALGORITHM ROADMAP ENGINE</text>
+              <circle cx="270" cy="90" r="16" fill="#c084fc"/>
+              <text x="200" y="145" text-anchor="middle" fill="#c084fc" font-family="'Anta', sans-serif" font-size="12" letter-spacing="2">LEETCODE SUGGESTER</text>
             </svg>`
         },
         emailshield: {
-          title: "Suspicious Email Shield",
-          category: "CYBERSECURITY & NLP",
-          desc: "A real-time cybersecurity email classification tool developed during the AlertEnterprise Hackathon. Employs natural language processing to inspect inbound communications for phishing signatures, deceptive URLs, and linguistic anomalies.",
+          title: "Suspicious Email Scanner",
+          category: "CYBERSECURITY",
+          desc: "Built during a hackathon to inspect email text and flag phishing links, fake senders, and urgent scams.",
           highlights: [
-            "Real-time NLP feature extraction and deceptive text classification",
-            "Engineered in a fast-paced sprint during AlertEnterprise Hackathon",
-            "High precision detection of malicious links and urgent phishing prompts"
+            "Scans email content for urgent scams and fake links",
+            "Built with team in a fast-paced hackathon sprint",
+            "Gives instant safe/suspicious rating"
           ],
-          tech: ["Python", "NLP", "Scikit-Learn", "Security Analytics", "Flask"],
+          tech: ["Python", "Flask", "NLP"],
           demoUrl: "https://github.com/codingmastergurkirat",
           githubUrl: "https://github.com/codingmastergurkirat",
           bannerSvg: `
             <svg width="100%" height="100%" viewBox="0 0 400 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="400" height="180" fill="#060b18"/>
-              <path d="M150 50L200 35L250 50V95C250 125 200 145 200 145C200 145 150 125 150 95V50Z" stroke="#2563eb" stroke-width="2" fill="#0f1a32"/>
-              <path d="M185 85L195 95L215 75" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <text x="200" y="165" text-anchor="middle" fill="#ffffff" font-family="'Anta', sans-serif" font-size="12" letter-spacing="2">ALERTENTERPRISE SECURITY AI</text>
+              <rect width="400" height="180" fill="#120324"/>
+              <path d="M150 50L200 35L250 50V95C250 125 200 145 200 145C200 145 150 125 150 95V50Z" stroke="#c084fc" stroke-width="2.5" fill="#2e0854"/>
+              <path d="M185 85L195 95L215 75" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="200" y="165" text-anchor="middle" fill="#ffffff" font-family="'Anta', sans-serif" font-size="12" letter-spacing="2">EMAIL SCANNER</text>
             </svg>`
         }
       };
@@ -2141,7 +2192,7 @@
         modalProjectBanner.innerHTML = data.bannerSvg;
 
         modalProjectHighlights.innerHTML = data.highlights
-          .map(function(h) { return '<li><i class="fa-solid fa-circle-check"></i> <span>' + h + '</span></li>'; })
+          .map(function(h) { return '<li><i class="fa-solid fa-check"></i> <span>' + h + '</span></li>'; })
           .join('');
 
         modalProjectTech.innerHTML = data.tech
@@ -2175,7 +2226,6 @@
       };
 
       window.handleResumeImgError = function(img) {
-        // Try alternate extension or show fallback gracefully
         if (img.src.indexOf('resume.png') !== -1) {
           img.src = 'resume.jpg';
         } else {
@@ -2217,7 +2267,7 @@
 
       function showToast(msg) {
         if (!toastPill) return;
-        toastPill.innerHTML = '<i class="fa-solid fa-check" style="color: var(--cobalt-bright); margin-right: 6px;"></i> ' + msg;
+        toastPill.innerHTML = '<i class="fa-solid fa-check" style="color: var(--black); margin-right: 6px;"></i> ' + msg;
         toastPill.classList.add('show');
         clearTimeout(toastTimer);
         toastTimer = setTimeout(function() {
