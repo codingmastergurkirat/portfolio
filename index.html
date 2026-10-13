@@ -94,7 +94,7 @@
       font-family: var(--font-anta), var(--font-sans);
       text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased;
-      cursor: default; /* Native OS cursor for highest performance */
+      cursor: default; /* Native OS cursor */
     }
 
     /* Playful cartoon coffee dot grid pattern */
@@ -125,7 +125,6 @@
 
     /* ========================================================
        PRELOADER: Ik Onkar + Sat Sri Akal + Welcome
-       Theme: Rich Coffee Brown & Spiced Cinnamon + Cream
        ======================================================== */
     #preloader {
       position: fixed;
@@ -246,7 +245,6 @@
 
     /* ========================================================
        TOP FLOATING NAV BAR
-       Buttons trigger Multi-Directional Panels
        ======================================================== */
     .top-pill-bar {
       position: fixed;
@@ -347,7 +345,6 @@
       box-shadow: 1px 1px 0px #000000;
     }
 
-    /* Nav Button Color Variations */
     .btn-nav-cinnamon {
       background: var(--cinnamon);
       color: var(--black);
@@ -390,7 +387,6 @@
 
     /* ========================================================
        MAIN HUB (NON-SCROLLABLE FULL VIEWPORT)
-       With Matching Cartoon Rectangles on Left and Right
        ======================================================== */
     .main-hub-wrapper {
       height: 100vh;
@@ -418,7 +414,7 @@
       .main-hub-wrapper {
         padding-top: 5.5rem;
         padding-bottom: 2rem;
-        overflow-y: auto; /* Fallback for very small mobile heights */
+        overflow-y: auto;
         height: auto;
         min-height: 100dvh;
       }
@@ -429,10 +425,7 @@
       }
     }
 
-    /* ========================================================
-       LEFT SIDE: CARTOON RECTANGLE CARD CONTAINER
-       Symmetrical to the photo card on the right
-       ======================================================== */
+    /* Left Side: Cartoon Rectangular Card */
     .hero-left-wrapper {
       display: flex;
       justify-content: center;
@@ -512,7 +505,7 @@
       font-weight: 700;
     }
 
-    /* Hero Primary Buttons */
+    /* Hero Buttons */
     .hero-actions-row {
       display: flex;
       flex-wrap: wrap;
@@ -576,9 +569,7 @@
       background: var(--mocha);
     }
 
-    /* ========================================================
-       FRONT PAGE SOCIAL BAR (Directly inside left card)
-       ======================================================== */
+    /* Front Page Social Bar */
     .front-social-bar {
       display: flex;
       align-items: center;
@@ -622,14 +613,7 @@
       box-shadow: var(--shadow-sm);
     }
 
-    .social-tile-btn:active {
-      transform: translate(1px, 1px);
-      box-shadow: 1px 1px 0px #000000;
-    }
-
-    /* ========================================================
-       RIGHT SIDE: CARTOON PHOTO RECTANGLE CARD
-       ======================================================== */
+    /* Right Side: Photo Card */
     .hero-photo-wrapper {
       display: flex;
       justify-content: center;
@@ -703,10 +687,6 @@
 
     /* ========================================================
        MULTI-DIRECTIONAL SLIDE-IN PANELS
-       1. Projects: comes from LEFT  (Back arrow points LEFT ←)
-       2. About Me: comes from RIGHT (Back arrow points RIGHT →)
-       3. Stats:    comes from TOP   (Back arrow points TOP ↑)
-       4. Hackathons: comes from BOTTOM (Back arrow points BOTTOM ↓)
        ======================================================== */
     .slide-panel {
       position: fixed;
@@ -732,22 +712,10 @@
       pointer-events: auto;
     }
 
-    /* Directional Starting Positions */
-    #panel-projects {
-      transform: translateX(-100%); /* Slides from Left */
-    }
-
-    #panel-about {
-      transform: translateX(100%);  /* Slides from Right */
-    }
-
-    #panel-stats {
-      transform: translateY(-100%); /* Slides from Top */
-    }
-
-    #panel-hackathons {
-      transform: translateY(100%);  /* Slides from Bottom */
-    }
+    #panel-projects { transform: translateX(-100%); }
+    #panel-about { transform: translateX(100%); }
+    #panel-stats { transform: translateY(-100%); }
+    #panel-hackathons { transform: translateY(100%); }
 
     /* Panel Sticky Header Bar */
     .panel-header-sticky {
@@ -792,7 +760,6 @@
       font-weight: 700;
     }
 
-    /* Directional Back Button */
     .panel-back-btn {
       font-family: var(--font-anta);
       font-size: 0.88rem;
@@ -816,12 +783,6 @@
       box-shadow: var(--shadow-md);
     }
 
-    .panel-back-btn:active {
-      transform: translate(1px, 1px);
-      box-shadow: 1px 1px 0px #000000;
-    }
-
-    /* Scrollable Internal Content Container */
     .panel-scroll-body {
       flex: 1;
       overflow-y: auto;
@@ -872,8 +833,6 @@
 
     /* ========================================================
        CARTOON CARDS SYSTEM
-       Varied cozy tones: Cinnamon, Cream, Mocha, Rich Coffee
-       Strict text contrast: Black on light, White on dark
        ======================================================== */
     .cards-grid-3 {
       display: grid;
@@ -898,66 +857,37 @@
       box-shadow: var(--shadow-lg);
     }
 
-    /* Theme Variants */
     .theme-cinnamon {
       background: var(--cinnamon);
       color: var(--black);
     }
-    .theme-cinnamon .card-text-body {
-      color: #1a0f08;
-    }
-    .theme-cinnamon .card-icon-box {
-      background: var(--cream);
-      color: var(--black);
-    }
-    .theme-cinnamon .card-label-mini {
-      color: #2e150a;
-    }
+    .theme-cinnamon .card-text-body { color: #1a0f08; }
+    .theme-cinnamon .card-icon-box { background: var(--cream); color: var(--black); }
+    .theme-cinnamon .card-label-mini { color: #2e150a; }
 
     .theme-cream {
       background: var(--cream);
       color: var(--black);
     }
-    .theme-cream .card-text-body {
-      color: #1a0f08;
-    }
-    .theme-cream .card-icon-box {
-      background: var(--cinnamon);
-      color: var(--black);
-    }
-    .theme-cream .card-label-mini {
-      color: #3d1f11;
-    }
+    .theme-cream .card-text-body { color: #1a0f08; }
+    .theme-cream .card-icon-box { background: var(--cinnamon); color: var(--black); }
+    .theme-cream .card-label-mini { color: #3d1f11; }
 
     .theme-mocha {
       background: var(--mocha);
       color: var(--cream);
     }
-    .theme-mocha .card-text-body {
-      color: var(--cream-dark);
-    }
-    .theme-mocha .card-icon-box {
-      background: var(--cinnamon);
-      color: var(--black);
-    }
-    .theme-mocha .card-label-mini {
-      color: var(--cinnamon-light);
-    }
+    .theme-mocha .card-text-body { color: var(--cream-dark); }
+    .theme-mocha .card-icon-box { background: var(--cinnamon); color: var(--black); }
+    .theme-mocha .card-label-mini { color: var(--cinnamon-light); }
 
     .theme-coffee {
       background: var(--coffee-surface);
       color: var(--cream);
     }
-    .theme-coffee .card-text-body {
-      color: var(--cream-dark);
-    }
-    .theme-coffee .card-icon-box {
-      background: var(--cinnamon);
-      color: var(--black);
-    }
-    .theme-coffee .card-label-mini {
-      color: var(--cinnamon-light);
-    }
+    .theme-coffee .card-text-body { color: var(--cream-dark); }
+    .theme-coffee .card-icon-box { background: var(--cinnamon); color: var(--black); }
+    .theme-coffee .card-label-mini { color: var(--cinnamon-light); }
 
     .card-icon-box {
       width: 48px;
@@ -994,7 +924,6 @@
       margin-bottom: 1.25rem;
     }
 
-    /* Skills Pill Group */
     .skills-pill-group {
       display: flex;
       flex-wrap: wrap;
@@ -1017,8 +946,55 @@
       gap: 0.4rem;
     }
 
+    /* Metric Counters */
+    .metric-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .metric-item {
+      background: var(--coffee-dark);
+      border: 2px solid #000000;
+      box-shadow: var(--shadow-sm);
+      border-radius: var(--radius-md);
+      padding: 0.85rem;
+      text-align: center;
+      transition: all 0.15s var(--ease-cartoon);
+    }
+
+    .metric-clickable {
+      cursor: pointer;
+    }
+    .metric-clickable:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: var(--shadow-md);
+      background: var(--coffee-surface);
+    }
+
+    .metric-val {
+      font-family: var(--font-anta);
+      font-size: 1.6rem;
+      color: var(--cinnamon-light);
+      font-weight: 800;
+      display: block;
+    }
+
+    .metric-caption {
+      font-family: var(--font-anta);
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      color: var(--cream);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+    }
+
     /* ========================================================
-       PROJECTS SECTION CARDS
+       PROJECTS SECTION CARDS (Real Image Thumbnails)
        ======================================================== */
     .projects-grid {
       display: grid;
@@ -1045,7 +1021,7 @@
 
     .project-thumb-container {
       width: 100%;
-      height: 140px;
+      height: 185px;
       border-radius: var(--radius-md);
       border: var(--border-thick);
       background: var(--coffee-dark);
@@ -1056,6 +1032,18 @@
       align-items: center;
       justify-content: center;
       margin-bottom: 1.1rem;
+    }
+
+    .project-thumb-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card-interactive:hover .project-thumb-img {
+      transform: scale(1.05);
     }
 
     .project-category-badge {
@@ -1125,6 +1113,72 @@
     }
 
     /* ========================================================
+       HACKATHONS CERTIFICATE THUMBNAILS & CARDS
+       ======================================================== */
+    .hackathon-cert-thumb-box {
+      width: 100%;
+      height: 150px;
+      border-radius: var(--radius-md);
+      border: var(--border-thick);
+      background: var(--coffee-dark);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hackathon-cert-thumb-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.25s ease;
+    }
+
+    .hackathon-cert-thumb-box:hover img {
+      transform: scale(1.05);
+    }
+
+    .cert-thumb-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(31, 18, 12, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      font-family: var(--font-anta);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--cream);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .hackathon-cert-thumb-box:hover .cert-thumb-overlay {
+      opacity: 1;
+    }
+
+    .cert-placeholder-fallback {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 1rem;
+      text-align: center;
+      color: var(--cream-dark);
+      background: var(--coffee-surface);
+      width: 100%;
+      height: 100%;
+      border: 2px dashed #000000;
+    }
+
+    /* ========================================================
        STATS SECTION (GITHUB & LEETCODE)
        ======================================================== */
     .stats-card-grid {
@@ -1172,42 +1226,8 @@
       background: var(--coffee-dark);
     }
 
-    /* Metric Counters */
-    .metric-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .metric-item {
-      background: var(--coffee-dark);
-      border: 2px solid #000000;
-      box-shadow: var(--shadow-sm);
-      border-radius: var(--radius-md);
-      padding: 0.85rem;
-      text-align: center;
-    }
-
-    .metric-val {
-      font-family: var(--font-anta);
-      font-size: 1.6rem;
-      color: var(--cinnamon-light);
-      font-weight: 800;
-      display: block;
-    }
-
-    .metric-caption {
-      font-family: var(--font-anta);
-      font-size: 0.75rem;
-      letter-spacing: 0.05em;
-      color: var(--cream);
-      font-weight: 700;
-    }
-
     /* ========================================================
-       MODALS: PROJECT & RESUME
-       Coffee, Cinnamon, and Cream cartoon aesthetic
+       MODALS: PROJECT, INTERNSHIPS, CERTIFICATE, RESUME
        ======================================================== */
     .modal-overlay {
       position: fixed;
@@ -1234,7 +1254,7 @@
       border: var(--border-chunky);
       box-shadow: var(--shadow-xl);
       border-radius: var(--radius-lg);
-      max-width: 620px;
+      max-width: 680px;
       width: 100%;
       max-height: 90vh;
       overflow-y: auto;
@@ -1270,8 +1290,8 @@
     }
 
     .modal-close-cross {
-      width: 34px;
-      height: 34px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       border: 2px solid #000000;
       box-shadow: 2px 2px 0px #000000;
@@ -1280,7 +1300,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1rem;
+      font-size: 1.1rem;
       transition: all 0.15s var(--ease-cartoon);
     }
 
@@ -1296,9 +1316,10 @@
       gap: 1.25rem;
     }
 
+    /* Synchronized Project Image Banner inside Modal */
     .modal-banner-preview {
       width: 100%;
-      height: 180px;
+      height: 240px;
       border-radius: var(--radius-md);
       border: var(--border-thick);
       background: var(--coffee-dark);
@@ -1307,6 +1328,15 @@
       align-items: center;
       justify-content: center;
       box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+
+    .modal-banner-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #110804;
+      display: block;
     }
 
     .modal-project-title {
@@ -1320,6 +1350,7 @@
       font-size: 0.95rem;
       color: var(--cream-dark);
       line-height: 1.6;
+      white-space: pre-line;
     }
 
     .modal-highlights-list {
@@ -1348,6 +1379,30 @@
       gap: 0.75rem;
       padding-top: 0.5rem;
       border-top: 2px solid #000000;
+    }
+
+    /* Certificate Modal Specifics */
+    .certificate-view-container {
+      width: 100%;
+      min-height: 320px;
+      max-height: 75vh;
+      border-radius: var(--radius-md);
+      border: var(--border-thick);
+      background: var(--coffee-dark);
+      box-shadow: var(--shadow-sm);
+      overflow: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;
+    }
+
+    .certificate-view-img {
+      max-width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+      display: block;
+      border-radius: var(--radius-sm);
     }
 
     /* Resume Preview Specifics */
@@ -1425,7 +1480,6 @@
       
       <div class="ikonkar-medallion">
         <svg class="ikonkar-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-          <!-- Ik Onkar Sacred Symbol -->
           <path d="M42 22C34 22 26 27 24 35C22 43 27 50 35 52C42 54 48 58 48 66C48 74 41 80 32 80C25 80 19 76 17 70M42 22C50 22 57 27 59 35C61 43 56 50 48 52M42 22V14C42 14 55 12 68 20C80 28 82 44 82 50C82 62 72 74 60 74C52 74 48 68 48 66" stroke="#000000" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
           <path d="M60 20C75 14 88 24 88 38C88 46 82 54 75 56" stroke="#000000" stroke-width="6" stroke-linecap="round" fill="none"/>
         </svg>
@@ -1440,7 +1494,6 @@
 
   <!-- ========================================================
        TOP FLOATING NAV BAR
-       Buttons trigger Multi-Directional Panels
        ======================================================== -->
   <header class="top-pill-bar">
     <div class="brand-mark-group">
@@ -1480,13 +1533,12 @@
 
   <!-- ========================================================
        MAIN HUB (NON-SCROLLABLE FULL SCREEN LANDING)
-       With Matching Cartoon Rectangles on Left and Right
        ======================================================== -->
   <main class="main-hub-wrapper">
     <div class="wrap">
       <div class="hero-grid">
         
-        <!-- Left Side: Cartoon Rectangular Card (Symmetrical to Photo Card) -->
+        <!-- Left Side: Cartoon Rectangular Card -->
         <div class="hero-left-wrapper">
           <div class="cartoon-intro-card">
             
@@ -1500,7 +1552,7 @@
             </h1>
 
             <p class="hero-tagline">
-              3rd-year CSE student at <strong>GNDEC Ludhiana</strong>. Building web applications in <strong>Next.js</strong> and using <strong>Python</strong>. Completed software engineering internship at <strong>AlertEnterprise</strong>.
+              3rd-year CSE student at <strong>GNDEC Ludhiana</strong>. Building web applications in <strong>Next.js</strong> and using <strong>Python</strong>. Completed software engineering internships at <strong>AlertEnterprise</strong> and <strong>InAmigoes Foundation</strong>.
             </p>
 
             <div class="hero-actions-row">
@@ -1515,7 +1567,7 @@
               </button>
             </div>
 
-            <!-- Front Page Social Bar directly on load inside left card -->
+            <!-- Front Page Social Bar -->
             <div class="front-social-bar" aria-label="Social Links">
               <span class="social-bar-label">LINKS</span>
 
@@ -1543,7 +1595,7 @@
           </div>
         </div>
 
-        <!-- Right Side: Cartoon Photo Rectangular Card immediately visible -->
+        <!-- Right Side: Photo Card -->
         <div class="hero-photo-wrapper">
           <div class="cartoon-photo-card">
             <div class="cartoon-photo-frame">
@@ -1562,7 +1614,12 @@
 
   <!-- ========================================================
        PANEL 1: PROJECTS (Slides in from LEFT)
-       Back Button Top-Right: Arrow points LEFT (←)
+       Order:
+       1. RecallCode
+       2. Leetcode Recommender
+       3. Heart Disease Predictor
+       4. Gurbani Viewer
+       5. GitGrade
        ======================================================== -->
   <aside class="slide-panel" id="panel-projects" role="dialog" aria-modal="true" aria-label="Projects Drawer">
     <div class="panel-header-sticky">
@@ -1581,107 +1638,113 @@
         <div class="panel-section-header">
           <div class="section-tag-pill"><i class="fa-solid fa-folder-open"></i> PORTFOLIO WORK</div>
           <h2 class="section-heading-lg">THINGS I HAVE BUILT</h2>
-          <p class="section-subtext">Click on any project to see quick highlights, live demo, and GitHub repository.</p>
+          <p class="section-subtext">Click on any project to see full details, live demo, and GitHub repository.</p>
         </div>
 
         <div class="projects-grid">
           
-          <!-- Project 1: GitGrade (Cinnamon theme, Black font) -->
-          <div class="project-card-interactive theme-cinnamon" onclick="openProjectModal('gitgrade')" role="button" tabindex="0">
+          <!-- 1. RecallCode (Cinnamon theme) -->
+          <div class="project-card-interactive theme-cinnamon" onclick="openProjectModal('recallcode')" role="button" tabindex="0">
             <div class="project-thumb-container">
               <span class="project-category-badge">WEB APP</span>
-              <svg width="140" height="90" viewBox="0 0 140 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="15" y="15" width="110" height="60" rx="10" stroke="#c86432" stroke-width="2.5" fill="#1f120c" />
-                <path d="M40 45L55 60M55 30L40 45" stroke="#c86432" stroke-width="3" stroke-linecap="round" />
-                <path d="M100 45L85 30M85 60L100 45" stroke="#faf2e6" stroke-width="3" stroke-linecap="round" />
-                <circle cx="70" cy="45" r="7" fill="#c86432" />
-              </svg>
+              <img src="images/recallcode.png" alt="RecallCode" class="project-thumb-img" onerror="this.style.display='none'">
+              <div class="project-quick-view-hint"><i class="fa-solid fa-expand"></i> VIEW DETAILS</div>
+            </div>
+            <div>
+              <h3 class="project-card-title">RecallCode</h3>
+              <p class="project-summary-short">
+                A spaced-repetition platform for DSA pattern recall that combines a LeetCode-style problem workflow with Anki-style flashcards to help developers retain patterns long-term.
+              </p>
+            </div>
+            <div class="project-tags-row">
+              <span class="project-tag-item">Next.js</span>
+              <span class="project-tag-item">TypeScript</span>
+              <span class="project-tag-item">Supabase</span>
+              <span class="project-tag-item">Judge0 API</span>
+            </div>
+          </div>
+
+          <!-- 2. Leetcode Recommender (Cream theme) -->
+          <div class="project-card-interactive theme-cream" onclick="openProjectModal('leetcode')" role="button" tabindex="0">
+            <div class="project-thumb-container">
+              <span class="project-category-badge">WEB APP</span>
+              <img src="images/leetcode.jpeg" alt="Leetcode Recommender" class="project-thumb-img" onerror="this.style.display='none'">
+              <div class="project-quick-view-hint"><i class="fa-solid fa-expand"></i> VIEW DETAILS</div>
+            </div>
+            <div>
+              <h3 class="project-card-title">LeetCode Recommender</h3>
+              <p class="project-summary-short">
+                Finds new problems to practice on LeetCode by analyzing public submission data and topic patterns instead of repeating solved ones.
+              </p>
+            </div>
+            <div class="project-tags-row">
+              <span class="project-tag-item">Next.js</span>
+              <span class="project-tag-item">React</span>
+              <span class="project-tag-item">LeetCode API</span>
+              <span class="project-tag-item">TypeScript</span>
+            </div>
+          </div>
+
+          <!-- 3. Heart Disease Predictor (Mocha theme) -->
+          <div class="project-card-interactive theme-mocha" onclick="openProjectModal('heart')" role="button" tabindex="0">
+            <div class="project-thumb-container">
+              <span class="project-category-badge">MACHINE LEARNING</span>
+              <img src="images/heart.jpeg" alt="Heart Disease Predictor" class="project-thumb-img" onerror="this.style.display='none'">
+              <div class="project-quick-view-hint"><i class="fa-solid fa-expand"></i> VIEW DETAILS</div>
+            </div>
+            <div>
+              <h3 class="project-card-title">Heart Disease Predictor</h3>
+              <p class="project-summary-short">
+                A machine learning-based web app that predicts heart disease likelihood from patient health parameters using Next.js and FastAPI.
+              </p>
+            </div>
+            <div class="project-tags-row">
+              <span class="project-tag-item">Next.js</span>
+              <span class="project-tag-item">FastAPI</span>
+              <span class="project-tag-item">Python</span>
+              <span class="project-tag-item">Scikit-Learn</span>
+            </div>
+          </div>
+
+          <!-- 4. Gurbani Viewer (Coffee theme) -->
+          <div class="project-card-interactive theme-coffee" onclick="openProjectModal('gurbaniviewer')" role="button" tabindex="0">
+            <div class="project-thumb-container">
+              <span class="project-category-badge">PRESENTER APP</span>
+              <img src="images/gurbaniviewer.png" alt="Gurbani Viewer" class="project-thumb-img" onerror="this.style.display='none'">
+              <div class="project-quick-view-hint"><i class="fa-solid fa-expand"></i> VIEW DETAILS</div>
+            </div>
+            <div>
+              <h3 class="project-card-title">Gurbani Viewer</h3>
+              <p class="project-summary-short">
+                A presenter web app built with Next.js designed to display and present Gurbani (Sikh scripture / hymns) on screens and projectors in Gurudwaras and homes.
+              </p>
+            </div>
+            <div class="project-tags-row">
+              <span class="project-tag-item">Next.js</span>
+              <span class="project-tag-item">React</span>
+              <span class="project-tag-item">Tailwind CSS</span>
+              <span class="project-tag-item">Gurmukhi</span>
+            </div>
+          </div>
+
+          <!-- 5. GitGrade (Cinnamon theme) -->
+          <div class="project-card-interactive theme-cinnamon" onclick="openProjectModal('gitgrade')" role="button" tabindex="0">
+            <div class="project-thumb-container">
+              <span class="project-category-badge">DEVELOPER TOOL</span>
+              <img src="images/gitgrade.png" alt="GitGrade" class="project-thumb-img" onerror="handleProjectThumbFallback(this, 'GitGrade')">
               <div class="project-quick-view-hint"><i class="fa-solid fa-expand"></i> VIEW DETAILS</div>
             </div>
             <div>
               <h3 class="project-card-title">GitGrade</h3>
               <p class="project-summary-short">
-                A web app that scans GitHub repositories and gives clear suggestions to improve code structure and profile READMEs.
+                A web app that scans GitHub repositories and provides actionable suggestions to improve code structure, commit habits, and profile READMEs.
               </p>
             </div>
             <div class="project-tags-row">
               <span class="project-tag-item">Next.js</span>
               <span class="project-tag-item">TypeScript</span>
               <span class="project-tag-item">Python</span>
-            </div>
-          </div>
-
-          <!-- Project 2: Heart Disease Predictor (Cream theme, Black font) -->
-          <div class="project-card-interactive theme-cream" onclick="openProjectModal('heart')" role="button" tabindex="0">
-            <div class="project-thumb-container">
-              <span class="project-category-badge">MACHINE LEARNING</span>
-              <svg width="140" height="90" viewBox="0 0 140 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="15" y="15" width="110" height="60" rx="10" stroke="#a84e22" stroke-width="2.5" fill="#1f120c" />
-                <path d="M30 48H50L58 28L68 62L76 42L82 48H110" stroke="#c86432" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-                <circle cx="58" cy="28" r="4" fill="#faf2e6" />
-                <circle cx="68" cy="62" r="4" fill="#c86432" />
-              </svg>
-              <div class="project-quick-view-hint"><i class="fa-solid fa-expand"></i> VIEW DETAILS</div>
-            </div>
-            <div>
-              <h3 class="project-card-title">Heart Disease Predictor</h3>
-              <p class="project-summary-short">
-                A machine learning app that checks patient health numbers to calculate the risk of heart disease.
-              </p>
-            </div>
-            <div class="project-tags-row">
-              <span class="project-tag-item">Python</span>
-              <span class="project-tag-item">Scikit-Learn</span>
-              <span class="project-tag-item">Streamlit</span>
-            </div>
-          </div>
-
-          <!-- Project 3: LeetCode Problem Suggester (Mocha theme, Cream font) -->
-          <div class="project-card-interactive theme-mocha" onclick="openProjectModal('leetcode')" role="button" tabindex="0">
-            <div class="project-thumb-container">
-              <span class="project-category-badge">WEB APP</span>
-              <svg width="140" height="90" viewBox="0 0 140 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="15" y="15" width="110" height="60" rx="10" stroke="#da7a48" stroke-width="2.5" fill="#1f120c" />
-                <circle cx="45" cy="45" r="9" stroke="#faf2e6" stroke-width="2" />
-                <path d="M55 45H85" stroke="#c86432" stroke-width="2.5" />
-                <circle cx="95" cy="45" r="9" fill="#c86432" />
-              </svg>
-              <div class="project-quick-view-hint"><i class="fa-solid fa-expand"></i> VIEW DETAILS</div>
-            </div>
-            <div>
-              <h3 class="project-card-title">LeetCode Problem Suggester</h3>
-              <p class="project-summary-short">
-                A tool that looks at your LeetCode profile and recommends which topics or problems you should practice next.
-              </p>
-            </div>
-            <div class="project-tags-row">
-              <span class="project-tag-item">React</span>
-              <span class="project-tag-item">Python</span>
-              <span class="project-tag-item">FastAPI</span>
-            </div>
-          </div>
-
-          <!-- Project 4: Suspicious Email Scanner (Coffee theme, Cream font) -->
-          <div class="project-card-interactive theme-coffee" onclick="openProjectModal('emailshield')" role="button" tabindex="0">
-            <div class="project-thumb-container">
-              <span class="project-category-badge">CYBERSECURITY</span>
-              <svg width="140" height="90" viewBox="0 0 140 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="20" y="20" width="100" height="50" rx="8" stroke="#c86432" stroke-width="2.5" fill="#160c07" />
-                <path d="M22 24L70 52L118 24" stroke="#c86432" stroke-width="2.5" />
-                <path d="M70 38V60M60 49H80" stroke="#faf2e6" stroke-width="2.5" stroke-linecap="round" />
-              </svg>
-              <div class="project-quick-view-hint"><i class="fa-solid fa-expand"></i> VIEW DETAILS</div>
-            </div>
-            <div>
-              <h3 class="project-card-title">Suspicious Email Scanner</h3>
-              <p class="project-summary-short">
-                Built during a hackathon to inspect email text and flag phishing links, fake senders, and urgent scams.
-              </p>
-            </div>
-            <div class="project-tags-row">
-              <span class="project-tag-item">Python</span>
-              <span class="project-tag-item">NLP</span>
-              <span class="project-tag-item">Flask</span>
+              <span class="project-tag-item">GitHub API</span>
             </div>
           </div>
 
@@ -1692,7 +1755,10 @@
 
   <!-- ========================================================
        PANEL 2: ABOUT ME (Slides in from RIGHT)
-       Back Button Top-Right: Arrow points RIGHT (→)
+       - Combined Work Experience (AlertEnterprise & InAmigoes)
+       - 2 Internships Count (Clickable modal)
+       - Community block removed
+       - Tech stack with Supabase and Antigravity
        ======================================================== -->
   <aside class="slide-panel" id="panel-about" role="dialog" aria-modal="true" aria-label="About Me Drawer">
     <div class="panel-header-sticky">
@@ -1716,29 +1782,31 @@
 
         <div class="cards-grid-3">
           
-          <!-- Card 1: AlertEnterprise (Cream theme, Black font) -->
-          <div class="cartoon-card theme-cream">
+          <!-- Card 1: Combined Work Experience (AlertEnterprise + InAmigoes Foundation) -->
+          <div class="cartoon-card theme-cream" style="grid-column: 1 / -1;">
             <div>
               <div class="card-icon-box"><i class="fa-solid fa-building-user"></i></div>
-              <div class="card-label-mini">WORK EXPERIENCE</div>
-              <h3 class="card-title-main">Software Engineering Intern</h3>
+              <div class="card-label-mini">WORK EXPERIENCE &amp; INTERNSHIPS</div>
+              <h3 class="card-title-main">Software Engineering &amp; Web Development</h3>
               <p class="card-text-body">
-                Completed my software engineering internship at AlertEnterprise, working with the team on enterprise software and cybersecurity features.
+                Completed software engineering internships at <strong>AlertEnterprise</strong> (engineering enterprise software and cybersecurity features) and <strong>InAmigoes Foundation</strong> (developing full-stack web applications and AI tasks for community outreach).
               </p>
             </div>
             <div class="metric-row">
-              <div class="metric-item">
-                <span class="metric-val">1</span>
-                <span class="metric-caption">INTERNSHIP DONE</span>
+              <!-- Clickable 2 Internships Box -->
+              <div class="metric-item metric-clickable" onclick="openInternshipsModal()" role="button" tabindex="0" title="Click to view internships & certificates">
+                <span class="metric-val">2</span>
+                <span class="metric-caption">INTERNSHIPS COMPLETED <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
               </div>
-              <div class="metric-item">
-                <span class="metric-val">3+</span>
-                <span class="metric-caption">HACKATHONS</span>
+              <!-- Clickable 4 Hackathons Box -->
+              <div class="metric-item metric-clickable" onclick="openPanel('panel-hackathons')" role="button" tabindex="0" title="Click to view hackathons">
+                <span class="metric-val">4</span>
+                <span class="metric-caption">HACKATHONS <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
               </div>
             </div>
           </div>
 
-          <!-- Card 2: Next.js & Python (Cinnamon theme, Black font) -->
+          <!-- Card 2: Next.js & Python Core Focus -->
           <div class="cartoon-card theme-cinnamon">
             <div>
               <div class="card-icon-box"><i class="fa-solid fa-laptop-code"></i></div>
@@ -1755,29 +1823,29 @@
             </div>
           </div>
 
-          <!-- Card 3: InAmigoes Foundation (Mocha theme, Cream font) -->
+          <!-- Card 3: Education Card -->
           <div class="cartoon-card theme-mocha">
             <div>
-              <div class="card-icon-box"><i class="fa-solid fa-hand-holding-heart"></i></div>
-              <div class="card-label-mini">COMMUNITY WORK</div>
-              <h3 class="card-title-main">InAmigoes Foundation</h3>
+              <div class="card-icon-box"><i class="fa-solid fa-graduation-cap"></i></div>
+              <div class="card-label-mini">ACADEMICS</div>
+              <h3 class="card-title-main">GNDEC Ludhiana</h3>
               <p class="card-text-body">
-                Contributed to web development and AI tasks for foundation outreach, working with collaborative teams on production features.
+                Pursuing Bachelor of Technology in Computer Science &amp; Engineering (CSE '28) at Guru Nanak Dev Engineering College, Ludhiana.
               </p>
             </div>
             <div class="skills-pill-group">
-              <span class="skill-pill"><i class="fa-solid fa-globe"></i> Web Dev</span>
-              <span class="skill-pill"><i class="fa-solid fa-brain"></i> AI Support</span>
+              <span class="skill-pill"><i class="fa-solid fa-book"></i> Data Structures</span>
+              <span class="skill-pill"><i class="fa-solid fa-code"></i> Algorithms</span>
             </div>
           </div>
 
-          <!-- Card 4: Tech Stack (Coffee theme, Cream font) -->
+          <!-- Card 4: Tech Stack (With Supabase and Antigravity) -->
           <div class="cartoon-card theme-coffee" style="grid-column: 1 / -1;">
             <div>
               <div class="card-icon-box"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-              <div class="card-label-mini">TECHNOLOGIES</div>
-              <h3 class="card-title-main">Tools &amp; Languages</h3>
-              <p class="card-text-body">Technologies I use regularly to build websites, APIs, and tools.</p>
+              <div class="card-label-mini">TECHNOLOGIES &amp; TOOLS</div>
+              <h3 class="card-title-main">Tools, Frameworks &amp; Languages</h3>
+              <p class="card-text-body">Technologies I use regularly to build websites, APIs, and AI-enabled software tools.</p>
             </div>
             <div class="skills-pill-group">
               <span class="skill-pill"><i class="fa-brands fa-react"></i> Next.js</span>
@@ -1785,6 +1853,8 @@
               <span class="skill-pill"><i class="fa-brands fa-python"></i> Python</span>
               <span class="skill-pill"><i class="fa-brands fa-js"></i> TypeScript</span>
               <span class="skill-pill"><i class="fa-brands fa-js"></i> JavaScript</span>
+              <span class="skill-pill"><i class="fa-solid fa-bolt" style="color: var(--cinnamon-light);"></i> Supabase</span>
+              <span class="skill-pill"><i class="fa-solid fa-wand-magic-sparkles" style="color: var(--cinnamon-light);"></i> Antigravity</span>
               <span class="skill-pill"><i class="fa-solid fa-c"></i> C++</span>
               <span class="skill-pill"><i class="fa-brands fa-git-alt"></i> Git &amp; GitHub</span>
               <span class="skill-pill"><i class="fa-brands fa-linux"></i> Linux</span>
@@ -1800,7 +1870,6 @@
 
   <!-- ========================================================
        PANEL 3: STATS (GITHUB & LEETCODE) (Slides in from TOP)
-       Back Button Top-Right: Arrow points UP (↑)
        ======================================================== -->
   <aside class="slide-panel" id="panel-stats" role="dialog" aria-modal="true" aria-label="Stats Drawer">
     <div class="panel-header-sticky">
@@ -1849,7 +1918,10 @@
 
   <!-- ========================================================
        PANEL 4: HACKATHONS (Slides in from BOTTOM)
-       Back Button Top-Right: Arrow points DOWN (↓)
+       1. Hackanauts (National Level Hackathon - 24 Hours)
+       2. GitGrade (Online Hackathon)
+       3. Codex (Online Hackathon)
+       4. Alert Enterprise Hackathon
        ======================================================== -->
   <aside class="slide-panel" id="panel-hackathons" role="dialog" aria-modal="true" aria-label="Hackathons Drawer">
     <div class="panel-header-sticky">
@@ -1868,56 +1940,92 @@
         <div class="panel-section-header">
           <div class="section-tag-pill"><i class="fa-solid fa-award"></i> COMPETITIVE SPRINTS</div>
           <h2 class="section-heading-lg">HACKATHONS &amp; COMPETITIONS</h2>
-          <p class="section-subtext">Building working prototypes under strict deadlines and presenting to judges.</p>
+          <p class="section-subtext">Building functioning prototypes under strict deadlines and presenting to judges.</p>
         </div>
 
         <div class="cards-grid-3">
           
-          <!-- Hackathon 1: Hackanauts (Cinnamon theme, Black font) -->
+          <!-- Hackathon 1: Hackanauts (24 Hours National Hackathon) -->
           <div class="cartoon-card theme-cinnamon">
             <div>
               <div class="card-icon-box"><i class="fa-solid fa-trophy"></i></div>
-              <div class="card-label-mini">NATIONAL FINALS</div>
-              <h3 class="card-title-main">Hackanauts National</h3>
+              <div class="card-label-mini">NATIONAL LEVEL HACKATHON</div>
+              <h3 class="card-title-main">Hackanauts</h3>
               <p class="card-text-body">
-                Reached the national finals in a 36-hour team hackathon, building and pitching a functioning web tool under tight pressure.
+                Reached the national finals in an intensive <strong>24-hour national level hackathon</strong>, collaborating in a team to build, deploy, and pitch a functioning web product under tight pressure.
               </p>
             </div>
             <div class="skills-pill-group">
               <span class="skill-pill"><i class="fa-solid fa-medal"></i> National Finalist</span>
-              <span class="skill-pill"><i class="fa-solid fa-users"></i> Team Lead</span>
+              <span class="skill-pill"><i class="fa-solid fa-clock"></i> 24-Hour Sprint</span>
+            </div>
+            <!-- Certificate Thumbnail -->
+            <div class="hackathon-cert-thumb-box" onclick="viewCertificate('images/cert_hackanauts.png', 'Hackanauts National Hackathon Certificate')" title="Click to view Hackanauts Certificate">
+              <img src="images/cert_hackanauts.png" alt="Hackanauts Certificate" onerror="handleCertThumbFallback(this, 'Hackanauts Certificate')">
+              <div class="cert-thumb-overlay"><i class="fa-solid fa-expand"></i> VIEW CERTIFICATE</div>
             </div>
           </div>
 
-          <!-- Hackathon 2: Git Grade Hackathon (Cream theme, Black font) -->
+          <!-- Hackathon 2: GitGrade (Online Hackathon) -->
           <div class="cartoon-card theme-cream">
             <div>
               <div class="card-icon-box"><i class="fa-solid fa-laptop-code"></i></div>
               <div class="card-label-mini">ONLINE HACKATHON</div>
               <h3 class="card-title-main">GitGrade Hackathon</h3>
               <p class="card-text-body">
-                Built an online analyzer for GitHub repos that reviews commit histories, code hygiene, and README presentation.
+                Built an online analyzer for GitHub repos that reviews commit histories, code hygiene, and README presentation to help developers audit their projects.
               </p>
             </div>
             <div class="skills-pill-group">
               <span class="skill-pill"><i class="fa-brands fa-github"></i> GitHub API</span>
               <span class="skill-pill"><i class="fa-brands fa-react"></i> Next.js</span>
             </div>
+            <!-- Certificate Thumbnail -->
+            <div class="hackathon-cert-thumb-box" onclick="viewCertificate('images/cert_gitgrade.png', 'GitGrade Hackathon Certificate')" title="Click to view GitGrade Certificate">
+              <img src="images/cert_gitgrade.png" alt="GitGrade Certificate" onerror="handleCertThumbFallback(this, 'GitGrade Certificate')">
+              <div class="cert-thumb-overlay"><i class="fa-solid fa-expand"></i> VIEW CERTIFICATE</div>
+            </div>
           </div>
 
-          <!-- Hackathon 3: AlertEnterprise Hack (Mocha theme, Cream font) -->
+          <!-- Hackathon 3: Codex (Online Hackathon) -->
           <div class="cartoon-card theme-mocha">
+            <div>
+              <div class="card-icon-box"><i class="fa-solid fa-code"></i></div>
+              <div class="card-label-mini">ONLINE HACKATHON</div>
+              <h3 class="card-title-main">Codex Hackathon</h3>
+              <p class="card-text-body">
+                Competed in the online Codex hackathon, developing an algorithmic and full-stack software solution during a fast-paced sprint.
+              </p>
+            </div>
+            <div class="skills-pill-group">
+              <span class="skill-pill"><i class="fa-solid fa-terminal"></i> Algorithmic</span>
+              <span class="skill-pill"><i class="fa-solid fa-bolt"></i> Fast Prototype</span>
+            </div>
+            <!-- Certificate Thumbnail -->
+            <div class="hackathon-cert-thumb-box" onclick="viewCertificate('images/cert_codex.png', 'Codex Hackathon Certificate')" title="Click to view Codex Certificate">
+              <img src="images/cert_codex.png" alt="Codex Certificate" onerror="handleCertThumbFallback(this, 'Codex Certificate')">
+              <div class="cert-thumb-overlay"><i class="fa-solid fa-expand"></i> VIEW CERTIFICATE</div>
+            </div>
+          </div>
+
+          <!-- Hackathon 4: Alert Enterprise Hackathon -->
+          <div class="cartoon-card theme-coffee">
             <div>
               <div class="card-icon-box"><i class="fa-solid fa-shield-halved"></i></div>
               <div class="card-label-mini">SECURITY HACKATHON</div>
-              <h3 class="card-title-main">AlertEnterprise Hack</h3>
+              <h3 class="card-title-main">Alert Enterprise Hackathon</h3>
               <p class="card-text-body">
-                Engineered an email scanner that inspects messages for phishing hooks, spoofed domains, and social engineering tricks.
+                Engineered an intelligent email scanner that inspects messages for phishing hooks, spoofed domains, and social engineering tricks, winning recognition from judges.
               </p>
             </div>
             <div class="skills-pill-group">
               <span class="skill-pill"><i class="fa-solid fa-shield"></i> Cyber Threat</span>
               <span class="skill-pill"><i class="fa-brands fa-python"></i> Python NLP</span>
+            </div>
+            <!-- Certificate Thumbnail -->
+            <div class="hackathon-cert-thumb-box" onclick="viewCertificate('images/cert_alertenterprise_hack.png', 'Alert Enterprise Hackathon Certificate')" title="Click to view AlertEnterprise Certificate">
+              <img src="images/cert_alertenterprise_hack.png" alt="AlertEnterprise Certificate" onerror="handleCertThumbFallback(this, 'Alert Enterprise Certificate')">
+              <div class="cert-thumb-overlay"><i class="fa-solid fa-expand"></i> VIEW CERTIFICATE</div>
             </div>
           </div>
 
@@ -1927,7 +2035,7 @@
   </aside>
 
   <!-- ========================================================
-       PROJECT POPUP MODAL
+       PROJECT POPUP MODAL (Displays Matching Project Image)
        ======================================================== -->
   <div class="modal-overlay" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalProjectTitle">
     <div class="modal-box-curved">
@@ -1939,8 +2047,9 @@
       </div>
 
       <div class="modal-body-content">
+        <!-- Exact Matching Project Image in Modal -->
         <div class="modal-banner-preview" id="modalProjectBanner">
-          <!-- Dynamic SVG preview inserted via JS -->
+          <img src="" id="modalProjectImg" alt="Project Image" onerror="this.style.display='none'">
         </div>
 
         <div>
@@ -1949,7 +2058,7 @@
         </div>
 
         <div>
-          <h4 style="font-family: var(--font-anta); font-size: 0.9rem; color: var(--cinnamon-light); margin-bottom: 0.4rem;">KEY HIGHLIGHTS</h4>
+          <h4 style="font-family: var(--font-anta); font-size: 0.9rem; color: var(--cinnamon-light); margin-bottom: 0.4rem;">KEY FEATURES &amp; HIGHLIGHTS</h4>
           <ul class="modal-highlights-list" id="modalProjectHighlights">
             <!-- Dynamic highlights -->
           </ul>
@@ -1969,6 +2078,100 @@
           <a href="#" id="modalGithubLink" target="_blank" rel="noopener noreferrer" class="btn-cartoon btn-cream" style="padding: 0.55rem 1.2rem; font-size: 0.85rem;">
             <i class="fa-brands fa-github"></i> GITHUB CODE
           </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       INTERNSHIPS POPUP MODAL (Lists AlertEnterprise & InAmigoes)
+       ======================================================== -->
+  <div class="modal-overlay" id="internshipsModal" role="dialog" aria-modal="true" aria-labelledby="internshipsModalTitle">
+    <div class="modal-box-curved">
+      <div class="modal-header-bar">
+        <span class="modal-header-badge"><i class="fa-solid fa-briefcase"></i> WORK EXPERIENCE</span>
+        <button class="modal-close-cross" onclick="closeInternshipsModal()" aria-label="Close dialog">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="modal-body-content">
+        <div>
+          <h3 class="modal-project-title" id="internshipsModalTitle">Completed Internships (2)</h3>
+          <p class="modal-project-summary">Practical engineering experience gained in production enterprise and foundation environments.</p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          
+          <!-- Internship 1: AlertEnterprise -->
+          <div class="cartoon-card theme-coffee" style="padding: 1.25rem;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
+              <div>
+                <span class="card-label-mini">ENTERPRISE SOFTWARE &amp; SECURITY</span>
+                <h4 style="font-family: var(--font-anta); font-size: 1.2rem; color: var(--cream);">AlertEnterprise</h4>
+                <div style="font-size: 0.85rem; color: var(--cinnamon-light); font-weight: 700;">Software Engineering Intern</div>
+              </div>
+              <button class="btn-cartoon btn-cinnamon" onclick="viewCertificate('images/cert_alertenterprise.png', 'AlertEnterprise Internship Certificate')" style="padding: 0.45rem 1rem; font-size: 0.8rem;">
+                <i class="fa-solid fa-certificate"></i> VIEW CERTIFICATE
+              </button>
+            </div>
+            <p style="font-size: 0.9rem; line-height: 1.5; color: var(--cream-dark);">
+              Worked with the core engineering team on enterprise software architectures, backend microservices, and cybersecurity validation features.
+            </p>
+          </div>
+
+          <!-- Internship 2: InAmigoes Foundation -->
+          <div class="cartoon-card theme-mocha" style="padding: 1.25rem;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
+              <div>
+                <span class="card-label-mini">WEB &amp; AI OUTREACH</span>
+                <h4 style="font-family: var(--font-anta); font-size: 1.2rem; color: var(--cream);">InAmigoes Foundation</h4>
+                <div style="font-size: 0.85rem; color: var(--cinnamon-light); font-weight: 700;">Web Development &amp; AI Intern</div>
+              </div>
+              <button class="btn-cartoon btn-cream" onclick="viewCertificate('images/cert_inamigoes.png', 'InAmigoes Foundation Internship Certificate')" style="padding: 0.45rem 1rem; font-size: 0.8rem;">
+                <i class="fa-solid fa-certificate"></i> VIEW CERTIFICATE
+              </button>
+            </div>
+            <p style="font-size: 0.9rem; line-height: 1.5; color: var(--cream-dark);">
+              Engineered web portal components and assisted in building artificial intelligence integration pipelines for foundation outreach.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       CERTIFICATE VIEWER MODAL (Clear, High-Res Image with Cross)
+       ======================================================== -->
+  <div class="modal-overlay" id="certificateModal" role="dialog" aria-modal="true" aria-labelledby="certificateModalTitle">
+    <div class="modal-box-curved" style="max-width: 820px;">
+      <div class="modal-header-bar">
+        <span class="modal-header-badge" id="certificateModalTitle"><i class="fa-solid fa-certificate"></i> CERTIFICATE</span>
+        <button class="modal-close-cross" onclick="closeCertificateModal()" aria-label="Close dialog">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="modal-body-content" style="align-items: center;">
+        <div class="certificate-view-container">
+          <img src="" id="certificateImg" alt="Certificate Preview" class="certificate-view-img" onerror="handleCertificateViewError(this)">
+          <div id="certificateFallbackBox" class="cert-placeholder-fallback" style="display: none; padding: 2.5rem;">
+            <i class="fa-solid fa-award" style="font-size: 3.5rem; color: var(--cinnamon);"></i>
+            <h4 style="font-family: var(--font-anta); font-size: 1.25rem; color: var(--cream);" id="fallbackCertName">Certificate Ready</h4>
+            <p style="font-size: 0.88rem; max-width: 48ch; line-height: 1.5; color: var(--cream-dark);">
+              Place your certificate image into <code>portfolio/images/</code> to preview it clearly in this window.
+            </p>
+          </div>
+        </div>
+
+        <div class="modal-actions-footer" style="width: 100%; justify-content: space-between;">
+          <span style="font-size: 0.82rem; color: var(--cream-dark); font-family: var(--font-anta);" id="certificateMetaText">Verified Credential</span>
+          <button class="btn-cartoon btn-cream" onclick="closeCertificateModal()" style="padding: 0.5rem 1.2rem; font-size: 0.82rem;">
+            <i class="fa-solid fa-xmark"></i> CLOSE
+          </button>
         </div>
       </div>
     </div>
@@ -2032,14 +2235,13 @@
   </div>
 
   <!-- ========================================================
-       JAVASCRIPT: Multi-Directional Panels, Preloader, Modals
-       (Zero mouse tracking listeners — Native OS Performance)
+       JAVASCRIPT: Project Images Sync, Drawers, Certificates & Modals
        ======================================================== -->
   <script>
     (function() {
       "use strict";
 
-      // 1. Preloader Sequence (Ik Onkar + Sat Sri Akal + Welcome)
+      // 1. Preloader Sequence
       const preloader = document.getElementById('preloader');
       const skipBtn = document.getElementById('skipPreloaderBtn');
       let preloaderDismissed = false;
@@ -2085,95 +2287,84 @@
         }
       };
 
-      // 3. Project Data Repository for Quick View Modals
+      // 3. Project Data Repository with Matching Image Paths
       const projectData = {
-        gitgrade: {
-          title: "GitGrade",
+        recallcode: {
+          title: "RecallCode",
           category: "WEB APP",
-          desc: "A web app that scans GitHub repositories and gives clear suggestions to improve code structure, commit habits, and profile READMEs.",
+          image: "images/recallcode.png",
+          desc: "A spaced-repetition platform for DSA pattern recall that combines a LeetCode-style problem workflow with Anki-style flashcards to help developers retain problem-solving patterns long-term.",
           highlights: [
-            "Analyzes code quality and repository organization",
-            "Actionable recommendations to stand out to recruiters",
-            "Direct GitHub API integration for fast scanning"
+            "LeetCode-style problem workflow combined with Anki-inspired spaced repetition",
+            "In-browser code editor with Judge0 API integration for real-time code execution",
+            "Groq and Gemini AI integration to analyze solutions and generate pattern-based flashcards"
           ],
-          tech: ["Next.js", "TypeScript", "Python", "Tailwind CSS"],
-          demoUrl: "https://github.com/codingmastergurkirat",
-          githubUrl: "https://github.com/codingmastergurkirat",
-          bannerSvg: `
-            <svg width="100%" height="100%" viewBox="0 0 400 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="400" height="180" fill="#1f120c"/>
-              <circle cx="200" cy="90" r="50" stroke="#c86432" stroke-width="2.5" stroke-dasharray="6 6"/>
-              <path d="M175 90L190 105M190 75L175 90" stroke="#c86432" stroke-width="3" stroke-linecap="round"/>
-              <path d="M225 90L210 75M210 105L225 90" stroke="#faf2e6" stroke-width="3" stroke-linecap="round"/>
-              <circle cx="200" cy="90" r="9" fill="#c86432"/>
-              <text x="200" y="145" text-anchor="middle" fill="#c86432" font-family="'Anta', sans-serif" font-size="12" letter-spacing="2">GITGRADE</text>
-            </svg>`
+          tech: ["Next.js", "TypeScript", "Supabase", "Judge0 API", "Groq API", "Gemini API"],
+          demoUrl: "https://recall-code-86di8luzd-gurkirat-singhs-projects-4f653e06.vercel.app/",
+          githubUrl: "https://github.com/codingmastergurkirat/RecallCode"
+        },
+        leetcode: {
+          title: "LeetCode Recommender",
+          category: "WEB APP",
+          image: "images/leetcode.jpeg",
+          desc: "LeetCode Suggestions helps you find new problems to practice on LeetCode instead of repeatedly solving ones you already know.\n\nHere's how it works:\n• Search for any LeetCode username directly in the app.\n• The app fetches that user's recently solved problems using the alfa-leetcode-api.\n• Based on the topics and patterns in those recent problems, it suggests new problems for the user to try next — surfacing challenges outside what they've already mastered.\n• No login to LeetCode itself is required — public submission data is fetched securely via username.",
+          highlights: [
+            "Search any LeetCode username directly without authentication",
+            "Fetches recent problem submissions via the public alfa-leetcode-api",
+            "Surfaces new problems based on detected patterns and algorithm topics",
+            "Responsive and quick search interface"
+          ],
+          tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "LeetCode API"],
+          demoUrl: "https://leetcodesuggestions-8ri0su21u-gurkirat-singhs-projects-4f653e06.vercel.app/",
+          githubUrl: "https://github.com/codingmastergurkirat/leetcodesuggestions"
         },
         heart: {
           title: "Heart Disease Predictor",
           category: "MACHINE LEARNING",
-          desc: "A machine learning app that checks patient health numbers to calculate the risk of heart disease.",
+          image: "images/heart.jpeg",
+          desc: "A machine learning-based web application that predicts the likelihood of heart disease using patient health parameters. The application combines a modern Next.js frontend with a FastAPI backend to provide accurate and responsive predictions through a simple user interface.",
           highlights: [
-            "Trained on real healthcare datasets with supervised learning",
-            "Clean web dashboard to enter health metrics and get instant risk scores",
-            "Feature importance breakdown explaining the prediction"
+            "Predicts heart disease using a trained machine learning model",
+            "Clean and responsive user interface with form validation",
+            "FastAPI REST API for prediction requests with real-time results",
+            "Built with modern web and machine learning technologies"
           ],
-          tech: ["Python", "Scikit-Learn", "Pandas", "Streamlit"],
-          demoUrl: "https://github.com/codingmastergurkirat",
-          githubUrl: "https://github.com/codingmastergurkirat",
-          bannerSvg: `
-            <svg width="100%" height="100%" viewBox="0 0 400 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="400" height="180" fill="#1f120c"/>
-              <path d="M50 90H140L160 50L180 130L200 70L220 100H350" stroke="#c86432" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="160" cy="50" r="4" fill="#faf2e6"/>
-              <circle cx="180" cy="130" r="4" fill="#c86432"/>
-              <text x="200" y="155" text-anchor="middle" fill="#faf2e6" font-family="'Anta', sans-serif" font-size="12" letter-spacing="2">HEART DISEASE PREDICTOR</text>
-            </svg>`
+          tech: ["Next.js", "FastAPI", "Python", "Scikit-Learn", "Pandas"],
+          demoUrl: "https://heartdiseasepredictor-one.vercel.app/",
+          githubUrl: "https://github.com/codingmastergurkirat/Heartdiseasepredictor"
         },
-        leetcode: {
-          title: "LeetCode Problem Suggester",
-          category: "WEB APP",
-          desc: "A tool that looks at your LeetCode profile and recommends which topics or problems you should practice next.",
+        gurbaniviewer: {
+          title: "Gurbani Viewer",
+          category: "PRESENTER WEB APP",
+          image: "images/gurbaniviewer.png",
+          desc: "A Gurbani viewer / presenter web app built with Next.js, created by Gurkirat Singh. The project is designed to display and present Gurbani (Sikh scripture / hymns) through a web interface — the kind of tool that's useful for showing shabads on a screen or projector, similar in spirit to other Gurbani-presentation software used in Gurudwaras and at home.",
           highlights: [
-            "Detects weak problem topics and algorithms automatically",
-            "Curated problem roadmaps organized by difficulty",
-            "Clean tracking dashboard to measure daily streaks"
+            "Present Sikh scripture (Gurbani / Shabads) seamlessly on screens or projectors",
+            "Designed for Gurudwaras and home prayer sessions",
+            "Clean, readable Gurmukhi typography with high contrast",
+            "Fast navigation and responsive layout"
           ],
-          tech: ["React", "Python", "FastAPI"],
-          demoUrl: "https://github.com/codingmastergurkirat",
-          githubUrl: "https://github.com/codingmastergurkirat",
-          bannerSvg: `
-            <svg width="100%" height="100%" viewBox="0 0 400 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="400" height="180" fill="#1f120c"/>
-              <circle cx="130" cy="90" r="16" stroke="#c86432" stroke-width="2.5"/>
-              <path d="M148 90H252" stroke="#faf2e6" stroke-width="2" stroke-dasharray="4 4"/>
-              <circle cx="270" cy="90" r="16" fill="#c86432"/>
-              <text x="200" y="145" text-anchor="middle" fill="#c86432" font-family="'Anta', sans-serif" font-size="12" letter-spacing="2">LEETCODE SUGGESTER</text>
-            </svg>`
+          tech: ["Next.js", "React", "Tailwind CSS", "Gurmukhi Script"],
+          demoUrl: "https://gurbani-viewer.vercel.app/",
+          githubUrl: "https://github.com/codingmastergurkirat/Gurbani-viewer/"
         },
-        emailshield: {
-          title: "Suspicious Email Scanner",
-          category: "CYBERSECURITY",
-          desc: "Built during a hackathon to inspect email text and flag phishing links, fake senders, and urgent scams.",
+        gitgrade: {
+          title: "GitGrade",
+          category: "DEVELOPER TOOL",
+          image: "images/gitgrade.png",
+          desc: "A web application that analyzes GitHub repositories, reviews commit history, code structure, hygiene, and README documentation to help developers optimize their profiles and stand out to recruiters.",
           highlights: [
-            "Extracts and validates embedded links and sender domains",
-            "Trained NLP heuristics to catch urgency manipulation",
-            "Instant classification rating for users"
+            "Automated repository hygiene and README scoring",
+            "Actionable suggestions to improve developer portfolios",
+            "Direct integration with GitHub REST API"
           ],
-          tech: ["Python", "Flask", "NLP"],
-          demoUrl: "https://github.com/codingmastergurkirat",
-          githubUrl: "https://github.com/codingmastergurkirat",
-          bannerSvg: `
-            <svg width="100%" height="100%" viewBox="0 0 400 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="400" height="180" fill="#1f120c"/>
-              <path d="M150 50L200 35L250 50V95C250 125 200 145 200 145C200 145 150 125 150 95V50Z" stroke="#c86432" stroke-width="2.5" fill="#331c14"/>
-              <path d="M185 85L195 95L215 75" stroke="#faf2e6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-              <text x="200" y="165" text-anchor="middle" fill="#faf2e6" font-family="'Anta', sans-serif" font-size="12" letter-spacing="2">EMAIL SCANNER</text>
-            </svg>`
+          tech: ["Next.js", "TypeScript", "Python", "GitHub API"],
+          demoUrl: "https://github.com/codingmastergurkirat/",
+          githubUrl: "https://github.com/codingmastergurkirat/"
         }
       };
 
-      // 4. Modal Handlers
+      // 4. Project Modal Handlers (Displays Exact Same Project Image)
       const projectModal = document.getElementById('projectModal');
       const modalProjectCategory = document.getElementById('modalProjectCategory');
       const modalProjectTitle = document.getElementById('modalProjectTitle');
@@ -2182,7 +2373,7 @@
       const modalProjectTech = document.getElementById('modalProjectTech');
       const modalDemoLink = document.getElementById('modalDemoLink');
       const modalGithubLink = document.getElementById('modalGithubLink');
-      const modalProjectBanner = document.getElementById('modalProjectBanner');
+      const modalProjectImg = document.getElementById('modalProjectImg');
 
       window.openProjectModal = function(key) {
         const data = projectData[key];
@@ -2191,7 +2382,12 @@
         modalProjectCategory.textContent = data.category;
         modalProjectTitle.textContent = data.title;
         modalProjectDesc.textContent = data.desc;
-        modalProjectBanner.innerHTML = data.bannerSvg;
+
+        if (modalProjectImg) {
+          modalProjectImg.style.display = 'block';
+          modalProjectImg.src = data.image;
+          modalProjectImg.alt = data.title;
+        }
 
         modalProjectHighlights.innerHTML = data.highlights
           .map(function(h) { return '<li><i class="fa-solid fa-check"></i> <span>' + h + '</span></li>'; })
@@ -2211,16 +2407,90 @@
         projectModal.classList.remove('active');
       };
 
-      // Resume Modal Handlers
+      // Fallback helper for missing project thumbnails
+      window.handleProjectThumbFallback = function(img, title) {
+        img.style.display = 'none';
+        const parent = img.parentElement;
+        if (parent && !parent.querySelector('.cert-placeholder-fallback')) {
+          const fb = document.createElement('div');
+          fb.className = 'cert-placeholder-fallback';
+          fb.innerHTML = '<i class="fa-solid fa-code" style="font-size:2rem;color:var(--cinnamon);"></i><span style="font-family:var(--font-anta);font-size:0.9rem;color:var(--cream);font-weight:700;">' + title + '</span>';
+          parent.appendChild(fb);
+        }
+      };
+
+      // 5. Internships Modal Handlers
+      const internshipsModal = document.getElementById('internshipsModal');
+
+      window.openInternshipsModal = function() {
+        if (internshipsModal) internshipsModal.classList.add('active');
+      };
+
+      window.closeInternshipsModal = function() {
+        if (internshipsModal) internshipsModal.classList.remove('active');
+      };
+
+      // 6. Certificate Viewer Modal Handlers
+      const certificateModal = document.getElementById('certificateModal');
+      const certificateImg = document.getElementById('certificateImg');
+      const certificateFallbackBox = document.getElementById('certificateFallbackBox');
+      const certificateModalTitle = document.getElementById('certificateModalTitle');
+      const fallbackCertName = document.getElementById('fallbackCertName');
+      const certificateMetaText = document.getElementById('certificateMetaText');
+
+      window.viewCertificate = function(imgSrc, title) {
+        if (!certificateModal) return;
+
+        if (certificateModalTitle) {
+          certificateModalTitle.innerHTML = '<i class="fa-solid fa-certificate"></i> ' + title;
+        }
+        if (fallbackCertName) fallbackCertName.textContent = title;
+        if (certificateMetaText) certificateMetaText.textContent = title;
+
+        if (certificateImg) {
+          certificateImg.style.display = 'block';
+          certificateImg.src = imgSrc;
+          certificateImg.alt = title;
+        }
+        if (certificateFallbackBox) {
+          certificateFallbackBox.style.display = 'none';
+        }
+
+        certificateModal.classList.add('active');
+      };
+
+      window.closeCertificateModal = function() {
+        if (certificateModal) certificateModal.classList.remove('active');
+      };
+
+      window.handleCertificateViewError = function(img) {
+        img.style.display = 'none';
+        if (certificateFallbackBox) {
+          certificateFallbackBox.style.display = 'flex';
+        }
+      };
+
+      window.handleCertThumbFallback = function(img, title) {
+        img.style.display = 'none';
+        const parent = img.parentElement;
+        if (parent && !parent.querySelector('.cert-placeholder-fallback')) {
+          const fb = document.createElement('div');
+          fb.className = 'cert-placeholder-fallback';
+          fb.innerHTML = '<i class="fa-solid fa-award" style="font-size:1.8rem;color:var(--cinnamon);"></i><span style="font-family:var(--font-anta);font-size:0.8rem;color:var(--cream);font-weight:700;">' + title + '</span>';
+          parent.appendChild(fb);
+        }
+      };
+
+      // 7. Resume Modal Handlers
       const resumeModal = document.getElementById('resumeModal');
       const resumeFallback = document.getElementById('resumeFallback');
 
       window.openResumeModal = function() {
-        resumeModal.classList.add('active');
+        if (resumeModal) resumeModal.classList.add('active');
       };
 
       window.closeResumeModal = function() {
-        resumeModal.classList.remove('active');
+        if (resumeModal) resumeModal.classList.remove('active');
       };
 
       window.handleResumeImgError = function(img) {
@@ -2233,18 +2503,24 @@
       };
 
       // Close Modals on Backdrop Click
-      [projectModal, resumeModal].forEach(function(modal) {
-        modal.addEventListener('click', function(e) {
-          if (e.target === modal) {
-            modal.classList.remove('active');
-          }
-        });
+      [projectModal, internshipsModal, certificateModal, resumeModal].forEach(function(modal) {
+        if (modal) {
+          modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+              modal.classList.remove('active');
+            }
+          });
+        }
       });
 
-      // Escape key closes modals or open panels
+      // Escape key closes open modals or open panels
       document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
-          if (projectModal && projectModal.classList.contains('active')) {
+          if (certificateModal && certificateModal.classList.contains('active')) {
+            closeCertificateModal();
+          } else if (internshipsModal && internshipsModal.classList.contains('active')) {
+            closeInternshipsModal();
+          } else if (projectModal && projectModal.classList.contains('active')) {
             closeProjectModal();
           } else if (resumeModal && resumeModal.classList.contains('active')) {
             closeResumeModal();
@@ -2254,7 +2530,7 @@
         }
       });
 
-      // 5. Clipboard Copy with Toast
+      // 8. Clipboard Copy with Toast
       window.copyEmailToClipboard = function() {
         const email = "gurkiratjap@gmail.com";
         navigator.clipboard.writeText(email).then(function() {
