@@ -1114,12 +1114,83 @@
     }
 
     /* ========================================================
-       HACKATHONS CERTIFICATE ACTIONS (Small, neat cartoon button)
+       HACKATHONS CERTIFICATE ACTIONS & THUMBNAILS
        ======================================================== */
+    .hackathon-cert-box {
+      margin-top: 1.15rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .hackathon-cert-thumb-link {
+      display: block;
+      text-decoration: none;
+      width: 100%;
+    }
+
+    .hackathon-cert-thumb {
+      width: 100%;
+      height: 135px;
+      border-radius: var(--radius-sm);
+      border: var(--border-thick);
+      box-shadow: var(--shadow-sm);
+      background: var(--coffee-dark);
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s var(--ease-cartoon);
+      cursor: pointer;
+    }
+
+    .hackathon-cert-thumb-link:hover .hackathon-cert-thumb {
+      transform: translate(-3px, -3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .hackathon-cert-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .hackathon-cert-thumb-link:hover .hackathon-cert-img {
+      transform: scale(1.04);
+    }
+
+    .cert-thumb-badge {
+      position: absolute;
+      bottom: 0.45rem;
+      right: 0.45rem;
+      font-family: var(--font-anta);
+      font-size: 0.68rem;
+      letter-spacing: 0.04em;
+      background: var(--cream);
+      color: var(--black);
+      border: 1.5px solid #000000;
+      box-shadow: 2px 2px 0px #000000;
+      padding: 0.18rem 0.5rem;
+      border-radius: var(--radius-pill);
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      z-index: 2;
+      pointer-events: none;
+      transition: background 0.15s ease;
+    }
+
+    .hackathon-cert-thumb-link:hover .cert-thumb-badge {
+      background: var(--cinnamon);
+      color: var(--black);
+    }
+
     .hackathon-cert-action {
-      margin-top: 1rem;
-      padding-top: 0.75rem;
-      border-top: 1.5px solid rgba(0, 0, 0, 0.2);
       display: flex;
       align-items: center;
       justify-content: flex-start;
@@ -1129,7 +1200,7 @@
       font-family: var(--font-anta);
       font-size: 0.76rem;
       letter-spacing: 0.04em;
-      padding: 0.35rem 0.85rem;
+      padding: 0.38rem 0.9rem;
       border-radius: var(--radius-pill);
       border: 2px solid #000000;
       box-shadow: 2px 2px 0px #000000;
@@ -1142,10 +1213,12 @@
       font-weight: 700;
       transition: all 0.15s var(--ease-cartoon);
       width: fit-content;
+      text-decoration: none;
     }
 
     .btn-cert-mini:hover {
       background: var(--cinnamon);
+      color: var(--black);
       transform: translate(-2px, -2px);
       box-shadow: 3px 3px 0px #000000;
     }
@@ -2216,11 +2289,19 @@
               <span class="skill-pill"><i class="fa-solid fa-medal"></i> National Finalist</span>
               <span class="skill-pill"><i class="fa-solid fa-clock"></i> 24-Hour Sprint</span>
             </div>
-            <!-- Certificate Button -->
-            <div class="hackathon-cert-action">
-              <button class="btn-cert-mini" onclick="viewCertificate('images/hacknaught.png', 'Hackanauts National Hackathon Certificate')" title="View Hackanauts Certificate">
-                <i class="fa-solid fa-certificate"></i> View Certificate
-              </button>
+            <!-- Certificate Preview & Link -->
+            <div class="hackathon-cert-box">
+              <a href="https://ik.imagekit.io/arnsftrxo/hacknaught.png?updatedAt=1792311810961" target="_blank" rel="noopener noreferrer" class="hackathon-cert-thumb-link" title="Open Hackanauts Certificate in new tab">
+                <div class="hackathon-cert-thumb">
+                  <img src="images/hacknaught.png" alt="Hackanauts National Hackathon Certificate" class="hackathon-cert-img" loading="lazy" onerror="handleCertThumbFallback(this, 'Hackanauts Certificate')">
+                  <span class="cert-thumb-badge"><i class="fa-solid fa-arrow-up-right-from-square"></i> Preview</span>
+                </div>
+              </a>
+              <div class="hackathon-cert-action">
+                <a href="https://ik.imagekit.io/arnsftrxo/hacknaught.png?updatedAt=1792311810961" target="_blank" rel="noopener noreferrer" class="btn-cert-mini" title="Open Hackanauts Certificate in new tab">
+                  <i class="fa-solid fa-certificate"></i> View Certificate <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.72em;"></i>
+                </a>
+              </div>
             </div>
           </div>
 
@@ -2238,11 +2319,19 @@
               <span class="skill-pill"><i class="fa-brands fa-github"></i> GitHub API</span>
               <span class="skill-pill"><i class="fa-brands fa-react"></i> Next.js</span>
             </div>
-            <!-- Certificate Button -->
-            <div class="hackathon-cert-action">
-              <button class="btn-cert-mini" onclick="viewCertificate('images/gitgrade.png', 'GitGrade Hackathon Certificate')" title="View GitGrade Certificate">
-                <i class="fa-solid fa-certificate"></i> View Certificate
-              </button>
+            <!-- Certificate Preview & Link -->
+            <div class="hackathon-cert-box">
+              <a href="https://ik.imagekit.io/arnsftrxo/gitgrade.png?updatedAt=1792311796390" target="_blank" rel="noopener noreferrer" class="hackathon-cert-thumb-link" title="Open GitGrade Certificate in new tab">
+                <div class="hackathon-cert-thumb">
+                  <img src="images/gitgrade.png" alt="GitGrade Hackathon Certificate" class="hackathon-cert-img" loading="lazy" onerror="handleCertThumbFallback(this, 'GitGrade Certificate')">
+                  <span class="cert-thumb-badge"><i class="fa-solid fa-arrow-up-right-from-square"></i> Preview</span>
+                </div>
+              </a>
+              <div class="hackathon-cert-action">
+                <a href="https://ik.imagekit.io/arnsftrxo/gitgrade.png?updatedAt=1792311796390" target="_blank" rel="noopener noreferrer" class="btn-cert-mini" title="Open GitGrade Certificate in new tab">
+                  <i class="fa-solid fa-certificate"></i> View Certificate <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.72em;"></i>
+                </a>
+              </div>
             </div>
           </div>
 
@@ -2260,11 +2349,19 @@
               <span class="skill-pill"><i class="fa-solid fa-terminal"></i> Algorithmic</span>
               <span class="skill-pill"><i class="fa-solid fa-bolt"></i> Fast Prototype</span>
             </div>
-            <!-- Certificate Button -->
-            <div class="hackathon-cert-action">
-              <button class="btn-cert-mini" onclick="viewCertificate('images/codex.png', 'Codex Hackathon Certificate')" title="View Codex Certificate">
-                <i class="fa-solid fa-certificate"></i> View Certificate
-              </button>
+            <!-- Certificate Preview & Link -->
+            <div class="hackathon-cert-box">
+              <a href="https://ik.imagekit.io/arnsftrxo/codex.png?updatedAt=1792311792808" target="_blank" rel="noopener noreferrer" class="hackathon-cert-thumb-link" title="Open Codex Certificate in new tab">
+                <div class="hackathon-cert-thumb">
+                  <img src="images/codex.png" alt="Codex Hackathon Certificate" class="hackathon-cert-img" loading="lazy" onerror="handleCertThumbFallback(this, 'Codex Certificate')">
+                  <span class="cert-thumb-badge"><i class="fa-solid fa-arrow-up-right-from-square"></i> Preview</span>
+                </div>
+              </a>
+              <div class="hackathon-cert-action">
+                <a href="https://ik.imagekit.io/arnsftrxo/codex.png?updatedAt=1792311792808" target="_blank" rel="noopener noreferrer" class="btn-cert-mini" title="Open Codex Certificate in new tab">
+                  <i class="fa-solid fa-certificate"></i> View Certificate <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.72em;"></i>
+                </a>
+              </div>
             </div>
           </div>
 
@@ -2282,11 +2379,19 @@
               <span class="skill-pill"><i class="fa-solid fa-shield"></i> Cyber Threat</span>
               <span class="skill-pill"><i class="fa-brands fa-python"></i> Python NLP</span>
             </div>
-            <!-- Certificate Button -->
-            <div class="hackathon-cert-action">
-              <button class="btn-cert-mini" onclick="viewCertificate('images/alerthack.jpeg', 'Alert Enterprise Hackathon Certificate')" title="View AlertEnterprise Certificate">
-                <i class="fa-solid fa-certificate"></i> View Certificate
-              </button>
+            <!-- Certificate Preview & Link -->
+            <div class="hackathon-cert-box">
+              <a href="https://ik.imagekit.io/arnsftrxo/alerthack.jpeg?updatedAt=1792311796922" target="_blank" rel="noopener noreferrer" class="hackathon-cert-thumb-link" title="Open Alert Enterprise Certificate in new tab">
+                <div class="hackathon-cert-thumb">
+                  <img src="images/alerthack.jpeg" alt="Alert Enterprise Hackathon Certificate" class="hackathon-cert-img" loading="lazy" onerror="handleCertThumbFallback(this, 'Alert Enterprise Certificate')">
+                  <span class="cert-thumb-badge"><i class="fa-solid fa-arrow-up-right-from-square"></i> Preview</span>
+                </div>
+              </a>
+              <div class="hackathon-cert-action">
+                <a href="https://ik.imagekit.io/arnsftrxo/alerthack.jpeg?updatedAt=1792311796922" target="_blank" rel="noopener noreferrer" class="btn-cert-mini" title="Open Alert Enterprise Certificate in new tab">
+                  <i class="fa-solid fa-certificate"></i> View Certificate <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.72em;"></i>
+                </a>
+              </div>
             </div>
           </div>
 
@@ -2372,9 +2477,9 @@
                 <h4 style="font-family: var(--font-anta); font-size: 1.2rem; color: var(--cream);">AlertEnterprise</h4>
                 <div style="font-size: 0.85rem; color: var(--cinnamon-light); font-weight: 700;">Software Engineering Intern</div>
               </div>
-              <button class="btn-cartoon btn-cinnamon" onclick="viewCertificate('images/alertintern.jpeg', 'AlertEnterprise Internship Certificate')" style="padding: 0.45rem 1rem; font-size: 0.8rem;">
-                <i class="fa-solid fa-certificate"></i> VIEW CERTIFICATE
-              </button>
+              <a href="https://ik.imagekit.io/arnsftrxo/alertintern.jpeg?updatedAt=1792311818102" target="_blank" rel="noopener noreferrer" class="btn-cartoon btn-cinnamon" style="padding: 0.45rem 1rem; font-size: 0.8rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.45rem;" title="Open AlertEnterprise Certificate in new tab">
+                <i class="fa-solid fa-certificate"></i> VIEW CERTIFICATE <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.72em;"></i>
+              </a>
             </div>
             <p style="font-size: 0.9rem; line-height: 1.5; color: var(--cream-dark);">
               Worked with the core engineering team on enterprise software architectures, backend microservices, and cybersecurity validation features.
@@ -2389,9 +2494,9 @@
                 <h4 style="font-family: var(--font-anta); font-size: 1.2rem; color: var(--cream);">InAmigoes Foundation</h4>
                 <div style="font-size: 0.85rem; color: var(--cinnamon-light); font-weight: 700;">Web Development &amp; AI Intern</div>
               </div>
-              <button class="btn-cartoon btn-cream" onclick="viewCertificate('images/inamigoesintern.png', 'InAmigoes Foundation Internship Certificate')" style="padding: 0.45rem 1rem; font-size: 0.8rem;">
-                <i class="fa-solid fa-certificate"></i> VIEW CERTIFICATE
-              </button>
+              <a href="https://ik.imagekit.io/arnsftrxo/inamigoesintern.png?updatedAt=1792311796921" target="_blank" rel="noopener noreferrer" class="btn-cartoon btn-cream" style="padding: 0.45rem 1rem; font-size: 0.8rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.45rem;" title="Open InAmigoes Foundation Certificate in new tab">
+                <i class="fa-solid fa-certificate"></i> VIEW CERTIFICATE <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.72em;"></i>
+              </a>
             </div>
             <p style="font-size: 0.9rem; line-height: 1.5; color: var(--cream-dark);">
               Engineered web portal components and assisted in building artificial intelligence integration pipelines for foundation outreach.
@@ -2698,36 +2803,22 @@
         }
       };
 
-      // 6. Certificate Viewer Modal Handlers
-      const certificateModal = document.getElementById('certificateModal');
-      const certificateImg = document.getElementById('certificateImg');
-      const certificateFallbackBox = document.getElementById('certificateFallbackBox');
-      const certificateModalTitle = document.getElementById('certificateModalTitle');
-      const fallbackCertName = document.getElementById('fallbackCertName');
-      const certificateMetaText = document.getElementById('certificateMetaText');
-
-      window.viewCertificate = function(imgSrc, title) {
-        if (!certificateModal) return;
-
-        if (certificateModalTitle) {
-          certificateModalTitle.innerHTML = '<i class="fa-solid fa-certificate"></i> ' + title;
-        }
-        if (fallbackCertName) fallbackCertName.textContent = title;
-        if (certificateMetaText) certificateMetaText.textContent = title;
-
-        if (certificateImg) {
-          certificateImg.style.display = 'block';
-          certificateImg.src = imgSrc;
-          certificateImg.alt = title;
-        }
-        if (certificateFallbackBox) {
-          certificateFallbackBox.style.display = 'none';
-        }
-
-        certificateModal.classList.add('active');
-        syncModalScrollLock();
+      // 6. Certificate Viewer Handler (Opens certificate photo in new tab)
+      const certExternalLinks = {
+        'images/hacknaught.png': 'https://ik.imagekit.io/arnsftrxo/hacknaught.png?updatedAt=1792311810961',
+        'images/gitgrade.png': 'https://ik.imagekit.io/arnsftrxo/gitgrade.png?updatedAt=1792311796390',
+        'images/codex.png': 'https://ik.imagekit.io/arnsftrxo/codex.png?updatedAt=1792311792808',
+        'images/alerthack.jpeg': 'https://ik.imagekit.io/arnsftrxo/alerthack.jpeg?updatedAt=1792311796922',
+        'images/alertintern.jpeg': 'https://ik.imagekit.io/arnsftrxo/alertintern.jpeg?updatedAt=1792311818102',
+        'images/inamigoesintern.png': 'https://ik.imagekit.io/arnsftrxo/inamigoesintern.png?updatedAt=1792311796921'
       };
 
+      window.viewCertificate = function(imgSrc, title) {
+        const url = certExternalLinks[imgSrc] || imgSrc;
+        window.open(url, '_blank', 'noopener,noreferrer');
+      };
+
+      const certificateModal = document.getElementById('certificateModal');
       window.closeCertificateModal = function() {
         if (certificateModal) {
           certificateModal.classList.remove('active');
