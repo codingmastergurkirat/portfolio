@@ -107,144 +107,6 @@
     }
 
     /* ========================================================
-       PRELOADER: Ik Onkar + Sat Sri Akal + Welcome
-       ======================================================== */
-    #preloader {
-      position: fixed;
-      inset: 0;
-      z-index: 99999;
-      background-color: var(--coffee-base);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.75s var(--ease-drawer), opacity 0.75s ease;
-      overflow: hidden;
-    }
-
-    #preloader.exit {
-      transform: translateY(-100%);
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    .preloader-halo {
-      position: absolute;
-      width: 440px;
-      height: 440px;
-      background: radial-gradient(circle, rgba(200, 100, 50, 0.24) 0%, transparent 70%);
-      border-radius: 50%;
-      pointer-events: none;
-      animation: preloaderPulse 2.8s ease-in-out infinite alternate;
-    }
-
-    @keyframes preloaderPulse {
-      0% { transform: scale(0.9); opacity: 0.6; }
-      100% { transform: scale(1.15); opacity: 1; }
-    }
-
-    .preloader-content {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 1.5rem;
-    }
-
-    .ikonkar-medallion {
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      background: var(--cinnamon);
-      border: var(--border-chunky);
-      box-shadow: var(--shadow-lg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.5rem;
-      animation: medallionPop 0.8s var(--ease-cartoon) forwards;
-      overflow: hidden;
-      padding: 16px;
-      box-sizing: border-box;
-      position: relative;
-    }
-
-    @keyframes medallionPop {
-      0% { transform: scale(0.4) rotate(-15deg); opacity: 0; }
-      100% { transform: scale(1) rotate(0deg); opacity: 1; }
-    }
-
-    .ikonkar-medallion img,
-    .ikonkar-medallion a img,
-    .ikonkar-img {
-      max-width: 100% !important;
-      max-height: 100% !important;
-      width: 100% !important;
-      height: 100% !important;
-      object-fit: contain !important;
-      display: block !important;
-      pointer-events: none;
-    }
-
-    .ikonkar-medallion a {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .punjabi-greeting {
-      font-family: var(--font-gurmukhi);
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 800;
-      color: var(--cream);
-      letter-spacing: 0.04em;
-      margin-bottom: 0.25rem;
-      text-shadow: 2px 2px 0px #000000;
-    }
-
-    .preloader-welcome-text {
-      font-family: var(--font-anta);
-      font-size: clamp(1.1rem, 2.8vw, 1.6rem);
-      letter-spacing: 0.35em;
-      color: var(--cinnamon-light);
-      margin-top: 0.35rem;
-      font-weight: 700;
-      text-shadow: 2px 2px 0px #000000;
-      animation: welcomeFadeIn 0.9s ease 0.4s both;
-    }
-
-    @keyframes welcomeFadeIn {
-      0% { opacity: 0; transform: translateY(10px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    .preloader-skip {
-      position: absolute;
-      bottom: 2rem;
-      font-family: var(--font-anta);
-      font-size: 0.82rem;
-      letter-spacing: 0.1em;
-      color: var(--black);
-      background: var(--cinnamon);
-      border: var(--border-thick);
-      box-shadow: var(--shadow-sm);
-      padding: 0.45rem 1.2rem;
-      border-radius: var(--radius-pill);
-      transition: all 0.15s var(--ease-cartoon);
-      font-weight: 700;
-    }
-
-    .preloader-skip:hover {
-      background: var(--cream);
-      transform: translate(-2px, -2px);
-      box-shadow: var(--shadow-md);
-    }
-
-    /* ========================================================
        TOP FLOATING NAV BAR
        ======================================================== */
     .top-pill-bar {
@@ -1826,24 +1688,6 @@
 <body>
 
   <!-- ========================================================
-       PRELOADER: Ik Onkar + Sat Sri Akal + Welcome
-       ======================================================== -->
-  <div id="preloader" role="status" aria-live="polite">
-    <div class="preloader-halo"></div>
-    <div class="preloader-content">
-      
-      <div class="ikonkar-medallion">
-        <img src="images/ikonkar.png" alt="Ik Onkar" class="ikonkar-img">
-      </div>
-
-      <div class="punjabi-greeting">ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ</div>
-      <div class="preloader-welcome-text">WELCOME</div>
-
-    </div>
-    <button class="preloader-skip" id="skipPreloaderBtn">SKIP INTRO</button>
-  </div>
-
-  <!-- ========================================================
        TOP FLOATING NAV BAR
        ======================================================== -->
   <header class="top-pill-bar">
@@ -2604,24 +2448,7 @@
     (function() {
       "use strict";
 
-      // 1. Preloader Sequence
-      const preloader = document.getElementById('preloader');
-      const skipBtn = document.getElementById('skipPreloaderBtn');
-      let preloaderDismissed = false;
-
-      function dismissPreloader() {
-        if (preloaderDismissed) return;
-        preloaderDismissed = true;
-        preloader.classList.add('exit');
-        setTimeout(function() {
-          preloader.style.display = 'none';
-        }, 750);
-      }
-
-      if (skipBtn) skipBtn.addEventListener('click', dismissPreloader);
-      setTimeout(dismissPreloader, 2200);
-
-      // 2. Multi-Directional Animated Panels Logic
+      // 1. Multi-Directional Animated Panels Logic
       let activePanelId = null;
 
       window.openPanel = function(panelId) {
